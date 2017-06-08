@@ -18,20 +18,23 @@ class App extends Component {
 
 class ProductCategoryRow extends React.Component {
   render() {
-    return (<tr className='category'><th>{this.props.category}</th></tr>);
+    return (
+      <tr>
+        <th className='tableHeaders'>
+          {this.props.category}
+        </th>
+      </tr>
+    );
   }
 }
 
 class ProductRow extends React.Component {
   render() {
-    var name = this.props.product.stocked ?
-      this.props.product.name :
-      <span style={{color: 'red'}}>
-        {this.props.product.name}
-      </span>;
-    return (
+     return (
       <tr>
-        <td>{name}</td>
+        <td className='tableRows'>
+          {this.props.product.name}
+        </td>
       </tr>
     );
   }
@@ -40,19 +43,15 @@ class ProductRow extends React.Component {
 class TableColumn extends React.Component {
   render() {
     var rows = [];
-    var column = 'Base';
-    console.log(this.props.inStockOnly)
+    var column = this.props.category;
     this.props.products.forEach((product) => {
-      // if (product.name.indexOf(this.props.filterText) === -1 || (!product.stocked && this.props.inStockOnly)) {
-      //   return;
-      // }
-       if (product.category ==='Base') {
+       if (product.category === column) {
         rows.push(<ProductRow product={product} key={product.name} />);
       }
     });
     return (
-      <table className='table'>
-        <thead className='tableHeaders'>
+      <table className='tableColumn'>
+        <thead>
           <ProductCategoryRow category={column} />
         </thead>
         <tbody>{rows}</tbody>
@@ -65,22 +64,17 @@ class Table extends React.Component {
   render() {
     var columns = [];
     var lastCategory = null;
-
     this.props.products.forEach((product) => {
-      if (product.name.indexOf(this.props.filterText) === -1 || (!product.stocked && this.props.inStockOnly)) {
-        return;
-      }
       if (product.category !== lastCategory) {
-        columns.push(<TableColumn category={product.category} key={product.category} />);
+        columns.push(<TableColumn className='tableColumn' products={this.props.products} category={product.category} key={product.category} />);
       }
-      // columns.push(<ProductRow product={product} key={product.name} />);
       lastCategory = product.category;
     });
+
     return (
-      <table className='table'>
-        <thead className='tableHeaders'>{columns}</thead>
-        <tbody>{columns}</tbody>
-      </table>
+      <div className='table'>
+        {columns}
+      </div>
     );
   }
 }
@@ -156,12 +150,10 @@ class FilterableProductTable extends React.Component {
           onFilterTextInput={this.handleFilterTextInput}
           onInStockInput={this.handleInStockInput}
         />
-        <TableColumn
-          products={this.props.products}
-          filterText={this.state.filterText}
-          inStockOnly={this.state.inStockOnly}
+        <Table products={this.props.products} 
+               filterText={this.state.filterText}
+               inStockOnly={this.state.inStockOnly}
         />
-        <Table products={this.props.products} />
       </div>
     );
   }
@@ -174,7 +166,7 @@ var PRODUCTS = [
   {category: 'Base', price: '$29.99', stocked: true, name: 'Basketball'},
   {category: 'Flavor', price: '$99.99', stocked: true, name: 'iPod Touch'},
   {category: 'Flavor', price: '$399.99', stocked: true, name: 'iPhone 5'},
-  {category: 'Flavor', price: '$199.99', stocked: true, name: 'Nexus 7'}
+  {category: 'Superfoods', price: '$199.99', stocked: true, name: 'Nexus 7'}
 ];
 
 export default App;
