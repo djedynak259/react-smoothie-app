@@ -161,12 +161,19 @@ class FilterableProductTable extends React.Component {
 
 
 var PRODUCTS = [
-  {category: 'Base', price: '$49.99', stocked: true, name: 'Football'},
-  {category: 'Base', price: '$9.99', stocked: true, name: 'Baseball'},
-  {category: 'Base', price: '$29.99', stocked: true, name: 'Basketball'},
-  {category: 'Flavor', price: '$99.99', stocked: true, name: 'iPod Touch'},
-  {category: 'Flavor', price: '$399.99', stocked: true, name: 'iPhone 5'},
-  {category: 'Superfoods', price: '$199.99', stocked: true, name: 'Nexus 7'}
+  {category: 'Base', price: '$49.99', stocked: true, name: 'Banana'},
+  {category: 'Base', price: '$9.99', stocked: true, name: 'Avocado'},
+  {category: 'Base', price: '$29.99', stocked: true, name: 'Coconut'},
+  {category: 'Liquid', price: '$99.99', stocked: true, name: 'Almond Milk'},
+  {category: 'Liquid', price: '$399.99', stocked: true, name: 'Organic Fruit Juice'},
+  {category: 'Fruits/Veg', price: '$199.99', stocked: true, name: 'Spinach'},
+  {category: 'Fruits/Veg', price: '$199.99', stocked: true, name: 'Kale'},
+  {category: 'Fruits/Veg', price: '$199.99', stocked: true, name: 'Strawberry'},
+  {category: 'Fruits/Veg', price: '$199.99', stocked: true, name: 'Blueberry'},
+  {category: 'Add-Ons', price: '$199.99', stocked: true, name: 'Maca'},
+  {category: 'Add-Ons', price: '$199.99', stocked: true, name: 'Cacao'},
+  {category: 'Add-Ons', price: '$199.99', stocked: true, name: 'Spirulina'},
+
 ];
 
 export default App;
