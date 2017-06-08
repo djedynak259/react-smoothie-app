@@ -37,26 +37,49 @@ class ProductRow extends React.Component {
   }
 }
 
-class ProductTable extends React.Component {
+class TableColumn extends React.Component {
   render() {
     var rows = [];
+    var column = 'Base';
+    console.log(this.props.inStockOnly)
+    this.props.products.forEach((product) => {
+      // if (product.name.indexOf(this.props.filterText) === -1 || (!product.stocked && this.props.inStockOnly)) {
+      //   return;
+      // }
+       if (product.category ==='Base') {
+        rows.push(<ProductRow product={product} key={product.name} />);
+      }
+    });
+    return (
+      <table className='table'>
+        <thead className='tableHeaders'>
+          <ProductCategoryRow category={column} />
+        </thead>
+        <tbody>{rows}</tbody>
+      </table>
+    );
+  }
+}
+
+class Table extends React.Component {
+  render() {
     var columns = [];
     var lastCategory = null;
-    console.log(this.props.inStockOnly)
+
     this.props.products.forEach((product) => {
       if (product.name.indexOf(this.props.filterText) === -1 || (!product.stocked && this.props.inStockOnly)) {
         return;
       }
       if (product.category !== lastCategory) {
-        columns.push(<ProductCategoryRow category={product.category} key={product.category} />);
+        columns.push(<TableColumn category={product.category} key={product.category} />);
       }
-      rows.push(<ProductRow product={product} key={product.name} />);
+      // columns.push(<ProductRow product={product} key={product.name} />);
       lastCategory = product.category;
     });
     return (
       <table className='table'>
         <thead className='tableHeaders'>{columns}</thead>
-        <tbody>{rows}</tbody>
+        <tbody>{columns}</tbody>
       </table>
     );
   }
@@ -133,11 +156,12 @@ class FilterableProductTable extends React.Component {
           onFilterTextInput={this.handleFilterTextInput}
           onInStockInput={this.handleInStockInput}
         />
-        <ProductTable
+        <TableColumn
           products={this.props.products}
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
         />
+        <Table products={this.props.products} />
       </div>
     );
   }
