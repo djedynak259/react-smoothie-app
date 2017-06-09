@@ -23,22 +23,26 @@
   to { transform: rotate(360deg); }
 }
 
+.mainContainer {
+  width: 95%;
+  margin: 0 auto;
+}
+
 .table {
   display: flex;
+  flex-flow: row wrap;
 }
 
 .tableColumn {
-  width: 100px;
-  height: auto;
   min-width: 200px;
-   -moz-user-select: none;
-   -khtml-user-select: none;
-   -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
 }
 
 .tableHeaders {
   display: flex;
-  height: 40px;
+  padding: 20px 0 10px 14px ;
   text-decoration: underline;
 }
 
@@ -48,6 +52,7 @@
   border-radius: 10px;
   height: 40px;
   padding-left: 16px;
+  padding-right: 16px;
 }
 
 .highlight {
