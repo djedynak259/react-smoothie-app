@@ -134,6 +134,16 @@ class SearchBar extends React.Component {
   }
 }
 
+class Recipe extends React.Component {
+  render () {
+    return (
+      <div className='recipe'>
+      
+      </div>
+    );
+  }
+}
+
 class FilterableProductTable extends React.Component {
   constructor(props) {
     super(props);
@@ -167,6 +177,7 @@ class FilterableProductTable extends React.Component {
           onFilterTextInput={this.handleFilterTextInput}
           onInStockInput={this.handleInStockInput}
         />
+        <Recipe />
         <Table products={this.props.products} 
                filterText={this.state.filterText}
                inStockOnly={this.state.inStockOnly}

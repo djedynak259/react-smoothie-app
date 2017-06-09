@@ -28,6 +28,11 @@
   margin: 0 auto;
 }
 
+.recipe {
+  height: 60px;
+  display: block;
+}
+
 .table {
   display: flex;
   flex-flow: row wrap;
