@@ -173,6 +173,7 @@ var PRODUCTS = [
   {category: 'Add-Ons', price: '$199.99', stocked: true, name: 'Maca'},
   {category: 'Add-Ons', price: '$199.99', stocked: true, name: 'Cacao'},
   {category: 'Add-Ons', price: '$199.99', stocked: true, name: 'Spirulina'},
+  {category: 'new row', price: '$199.99', stocked: true, name: 'dirt'}
 
 ];
 
