@@ -31,20 +31,25 @@ class ProductCategoryRow extends React.Component {
 class ProductRow extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {className: 'tableRows'};
+    this.state = {classN: 'tableRows'};
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    this.setState(e => {
-      highlightColor: !e.highlightColor
-    });
+    if (this.state.classN === 'tableRows'){
+      this.setState({classN: 'tableRows highlight'})
+    } else {
+      this.setState({classN: 'tableRows'})
+    }
   }
 
   render() {
+    const highlight = this.state.className;
+
+
      return (
       <tr>
-        <td className={this.state.className}>
+        <td className={this.state.classN} onClick={this.handleClick}>
           {this.props.product.name}
         </td>
       </tr>

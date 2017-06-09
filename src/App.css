@@ -30,8 +30,10 @@
 .tableColumn {
   width: 100px;
   height: auto;
-  border: 1px solid;
   min-width: 200px;
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
 }
 
 .tableHeaders {
@@ -49,5 +51,5 @@
 }
 
 .highlight {
-  background-color: blue;
+  background-color: lightblue;
 }
