@@ -32,24 +32,22 @@ class ProductRow extends React.Component {
   constructor (props) {
     super(props);
     this.handleClassChange = this.handleClassChange.bind(this);
-    this.state = {g: 'tablerows'}
+    this.state = {classN: 'tableRows'}
   }
 
   handleClassChange(e) {
     this.props.onClassChange(e.target)
-    if (e.target.className === 'tableRows'){
-      console.log('test', e.target)
-      e.target.className === 'tableRows highlight';
+    if (this.state.classN === 'tableRows'){
+      this.setState({classN: 'tableRows highlight'})
     } else {
-      console.log('test2',e.target)
-      e.target.className === 'tableRows';
+      this.setState({classN: 'tableRows'})
     }
   }
 
   render() {
      return (
       <tr>
-        <td className={this.state.g} onClick={this.handleClassChange}>
+        <td className={this.state.classN} onClick={this.handleClassChange}>
           {this.props.product.name}
         </td>
       </tr>
@@ -65,9 +63,8 @@ class TableColumn extends React.Component {
   }
 
   onClassChange(e) {
-    // console.log(e.className);
+    console.log(e);
     if (e.className === 'tableRows'){
-      // console.log('test')
       e.className === 'tableRows highlight'
       this.setState({classN: 'tableRows highlight'})
     } else {
