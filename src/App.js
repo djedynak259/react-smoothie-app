@@ -31,25 +31,17 @@ class ProductCategoryRow extends React.Component {
 class ProductRow extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {classN: 'tableRows'};
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClassChange = this.handleClassChange.bind(this);
   }
 
-  handleClick() {
-    if (this.state.classN === 'tableRows'){
-      this.setState({classN: 'tableRows highlight'})
-    } else {
-      this.setState({classN: 'tableRows'})
-    }
+  handleClassChange(e) {
+    this.props.onClassChange(e)
   }
 
   render() {
-    const highlight = this.state.className;
-
-
      return (
       <tr>
-        <td className={this.state.classN} onClick={this.handleClick}>
+        <td className={this.props.classN} onClick={this.handleClassChange}>
           {this.props.product.name}
         </td>
       </tr>
@@ -58,12 +50,27 @@ class ProductRow extends React.Component {
 }
 
 class TableColumn extends React.Component {
+  constructor (props) {
+    super(props);
+    this.classChange = this.classChange.bind(this);
+    this.state = {classN: 'tableRows'};
+  }
+
+  classChange(e) {
+    if (this.state.classN === 'tableRows'){
+      this.setState({classN: 'tableRows highlight'})
+      console.log('test')
+    } else {
+      this.setState({classN: 'tableRows'})
+    }
+  }
+
   render() {
     var rows = [];
     var column = this.props.category;
     this.props.products.forEach((product) => {
        if (product.category === column) {
-        rows.push(<ProductRow product={product} key={product.name} />);
+        rows.push(<ProductRow classN={this.state.classN} onClassChange={this.classChange} product={product} key={product.name} />);
       }
     });
     return (
@@ -137,8 +144,7 @@ class SearchBar extends React.Component {
 class Recipe extends React.Component {
   render () {
     return (
-      <div className='recipe'>
-      
+      <div>
       </div>
     );
   }
