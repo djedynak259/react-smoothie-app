@@ -136,26 +136,17 @@ class SearchBar extends React.Component {
           value={this.props.filterText}
           onChange={this.handleFilterTextInputChange}
         />
-        <p>
-          <input
-            type="checkbox"
-            checked={this.props.inStockOnly}
-            onChange={this.handleInStockInputChange}
-          />
-          {' '}
-          Only show products in stock
-        </p>
       </form>
     );
   }
 }
 
 class Recipe extends React.Component {
-
   render () {
     return (
       <div>
-        {this.props.recipe}
+        <p>{this.props.recipe}</p>
+        <p>{this.props.recipee}</p>
       </div>
     );
   }
@@ -166,19 +157,20 @@ class FilterableProductTable extends React.Component {
     super(props);
     this.state = {
       filterText: '',
-      inStockOnly: false,
-      recipe: 'test'
+      recipe: 'Ingredients',
+      recipee: []
     };
 
     this.passTarget = this.passTarget.bind(this);
     this.handleFilterTextInput = this.handleFilterTextInput.bind(this);
-    this.handleInStockInput = this.handleInStockInput.bind(this);
   }
 
   passTarget(e) {
-    console.log(e)
+    let temp = this.state.recipee;
+    temp.push(e)
     this.setState({
-      recipe: `Fuck ya, ${e}!`
+      recipe: `Fuck ya, ${e}!`,
+      recipee: temp
     })
   }
 
@@ -187,27 +179,18 @@ class FilterableProductTable extends React.Component {
       filterText: filterText
     });
   }
-  
-  handleInStockInput(inStockOnly) {
-    this.setState({
-      inStockOnly: inStockOnly
-    })
-  }
 
   render() {
-
     return (
       <div className='mainContainer'>
         <SearchBar
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
           onFilterTextInput={this.handleFilterTextInput}
-          onInStockInput={this.handleInStockInput}
         />
-        <Recipe recipe={this.state.recipe}/>
+        <Recipe recipe={this.state.recipe} recipee={this.state.recipee}/>
         <Table products={this.props.products} 
                filterText={this.state.filterText}
-               inStockOnly={this.state.inStockOnly}
                passTarget={this.passTarget}
         />
       </div>
