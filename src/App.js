@@ -143,10 +143,11 @@ class SearchBar extends React.Component {
 
 class Recipe extends React.Component {
   render () {
+    let string = this.props.recipee.toString();
     return (
       <div>
         <p>{this.props.recipe}</p>
-        <p>{this.props.recipee}</p>
+        <p>{string}</p>
       </div>
     );
   }
@@ -167,7 +168,11 @@ class FilterableProductTable extends React.Component {
 
   passTarget(e) {
     let temp = this.state.recipee;
-    temp.push(e)
+    if(temp.includes(e)){
+      temp.splice(temp.indexOf(e),1)
+    } else {
+      temp.push(e)
+    }
     this.setState({
       recipe: `Fuck ya, ${e}!`,
       recipee: temp
