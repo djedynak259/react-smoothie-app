@@ -36,7 +36,7 @@ class ProductRow extends React.Component {
   }
 
   handleClassChange(e) {
-    this.props.onClassChange(e.target)
+    this.props.onClassChange(e.target.textContent)
     if (this.state.classN === 'tableRows'){
       this.setState({classN: 'tableRows highlight'})
     } else {
@@ -47,7 +47,7 @@ class ProductRow extends React.Component {
   render() {
      return (
       <tr>
-        <td className={this.state.classN} onClick={this.handleClassChange} value={this.props.product}>
+        <td className={this.state.classN} onClick={this.handleClassChange}>
           {this.props.product.name}
         </td>
       </tr>
@@ -62,7 +62,7 @@ class TableColumn extends React.Component {
   }
 
   passTarget(e) {
-    console.log(e.value);
+    this.props.passTarget(e)
   }
 
   render() {
@@ -85,12 +85,21 @@ class TableColumn extends React.Component {
 }
 
 class Table extends React.Component {
+  constructor(props) {
+    super(props);
+    this.passTarget = this.passTarget.bind(this);
+  }
+
+  passTarget(e) {
+    this.props.passTarget(e)
+  }
+
   render() {
     var columns = [];
     var lastCategory = null;
     this.props.products.forEach((product) => {
       if (product.category !== lastCategory) {
-        columns.push(<TableColumn className='tableColumn' products={this.props.products} category={product.category} key={product.category} />);
+        columns.push(<TableColumn passTarget={this.passTarget} products={this.props.products} category={product.category} key={product.category} />);
       }
       lastCategory = product.category;
     });
@@ -142,9 +151,19 @@ class SearchBar extends React.Component {
 }
 
 class Recipe extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {recipe: []}
+  }
+
+  ingredientAdd(e){
+    this.setState({recipe:  e})
+  }
+
   render () {
     return (
       <div>
+        {this.state.recipe}
       </div>
     );
   }
@@ -157,9 +176,15 @@ class FilterableProductTable extends React.Component {
       filterText: '',
       inStockOnly: false
     };
-    
+
+    this.passTarget = this.passTarget.bind(this);
     this.handleFilterTextInput = this.handleFilterTextInput.bind(this);
     this.handleInStockInput = this.handleInStockInput.bind(this);
+  }
+
+  passTarget(e) {
+    var ingredient = e
+      console.log(ingredient)
   }
 
   handleFilterTextInput(filterText) {
@@ -183,10 +208,11 @@ class FilterableProductTable extends React.Component {
           onFilterTextInput={this.handleFilterTextInput}
           onInStockInput={this.handleInStockInput}
         />
-        <Recipe />
+        <Recipe ingredientAdd={this.passTarget}/>
         <Table products={this.props.products} 
                filterText={this.state.filterText}
                inStockOnly={this.state.inStockOnly}
+               passTarget={this.passTarget}
         />
       </div>
     );
