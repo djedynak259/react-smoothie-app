@@ -47,7 +47,7 @@ class ProductRow extends React.Component {
   render() {
      return (
       <tr>
-        <td className={this.state.classN} onClick={this.handleClassChange}>
+        <td className={this.state.classN} onClick={this.handleClassChange} value={this.props.product}>
           {this.props.product.name}
         </td>
       </tr>
@@ -58,19 +58,11 @@ class ProductRow extends React.Component {
 class TableColumn extends React.Component {
   constructor (props) {
     super(props);
-    this.onClassChange = this.onClassChange.bind(this);
-    this.state = {classN: 'tableRows'};
+    this.passTarget = this.passTarget.bind(this);
   }
 
-  onClassChange(e) {
-    console.log(e);
-    
-    if (e.className === 'tableRows'){
-      e.className === 'tableRows highlight'
-      this.setState({classN: 'tableRows highlight'})
-    } else {
-      this.setState({classN: 'tableRows'})
-    }
+  passTarget(e) {
+    console.log(e.value);
   }
 
   render() {
@@ -78,7 +70,7 @@ class TableColumn extends React.Component {
     var column = this.props.category;
     this.props.products.forEach((product) => {
        if (product.category === column) {
-        rows.push(<ProductRow onClassChange={this.onClassChange} product={product} key={product.name} />);
+        rows.push(<ProductRow onClassChange={this.passTarget} product={product} key={product.name} />);
       }
     });
     return (
