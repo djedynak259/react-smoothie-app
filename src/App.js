@@ -153,17 +153,12 @@ class SearchBar extends React.Component {
 class Recipe extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {recipe: []}
-  }
-
-  ingredientAdd(e){
-    this.setState({recipe:  e})
   }
 
   render () {
     return (
       <div>
-        {this.state.recipe}
+        {this.props.recipe}
       </div>
     );
   }
@@ -183,8 +178,9 @@ class FilterableProductTable extends React.Component {
   }
 
   passTarget(e) {
-    var ingredient = e
-      console.log(ingredient)
+    let recipe = [];
+    recipe.push(e)
+    console.log(recipe)
   }
 
   handleFilterTextInput(filterText) {
@@ -200,6 +196,8 @@ class FilterableProductTable extends React.Component {
   }
 
   render() {
+
+
     return (
       <div className='mainContainer'>
         <SearchBar
@@ -208,7 +206,7 @@ class FilterableProductTable extends React.Component {
           onFilterTextInput={this.handleFilterTextInput}
           onInStockInput={this.handleInStockInput}
         />
-        <Recipe ingredientAdd={this.passTarget}/>
+        <Recipe recipe={this.passTarget}/>
         <Table products={this.props.products} 
                filterText={this.state.filterText}
                inStockOnly={this.state.inStockOnly}
