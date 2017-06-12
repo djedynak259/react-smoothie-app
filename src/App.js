@@ -64,6 +64,7 @@ class TableColumn extends React.Component {
 
   onClassChange(e) {
     console.log(e);
+    
     if (e.className === 'tableRows'){
       e.className === 'tableRows highlight'
       this.setState({classN: 'tableRows highlight'})
