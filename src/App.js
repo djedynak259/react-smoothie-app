@@ -69,6 +69,9 @@ class TableColumn extends React.Component {
     var rows = [];
     var column = this.props.category;
     this.props.products.forEach((product) => {
+       if (product.name.toLowerCase().indexOf(this.props.filterText.toLowerCase()) === -1) {
+        return;
+      }
        if (product.category === column) {
         rows.push(<ProductRow onClassChange={this.passTarget} product={product} key={product.name} />);
       }
@@ -99,7 +102,12 @@ class Table extends React.Component {
     var lastCategory = null;
     this.props.products.forEach((product) => {
       if (product.category !== lastCategory) {
-        columns.push(<TableColumn passTarget={this.passTarget} products={this.props.products} category={product.category} key={product.category} />);
+        columns.push(<TableColumn passTarget={this.passTarget} 
+                                  products={this.props.products} 
+                                  category={product.category} 
+                                  key={product.category}
+                                  filterText={this.props.filterText} 
+                                  />);
       }
       lastCategory = product.category;
     });
@@ -116,15 +124,10 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.handleFilterTextInputChange = this.handleFilterTextInputChange.bind(this);
-    this.handleInStockInputChange = this.handleInStockInputChange.bind(this);
   }
   
   handleFilterTextInputChange(e) {
     this.props.onFilterTextInput(e.target.value);
-  }
-  
-  handleInStockInputChange(e) {
-    this.props.onInStockInput(e.target.checked);
   }
   
   render() {
@@ -153,7 +156,6 @@ class Recipe extends React.Component {
         string = `${string}, ${this.props.recipe[i]}`;
       }
     }
-
     return (
       <div>
         <p className='fuckYa'>{this.props.ingredient}</p>
@@ -200,10 +202,10 @@ class FilterableProductTable extends React.Component {
       <div className='mainContainer'>
         <SearchBar
           filterText={this.state.filterText}
-          inStockOnly={this.state.inStockOnly}
           onFilterTextInput={this.handleFilterTextInput}
         />
-        <Recipe recipe={this.state.recipe} ingredient={this.state.ingredient}/>
+        <Recipe recipe={this.state.recipe} 
+                ingredient={this.state.ingredient}/>
         <Table products={this.props.products} 
                filterText={this.state.filterText}
                passTarget={this.passTarget}
