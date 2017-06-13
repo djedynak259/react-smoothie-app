@@ -143,11 +143,19 @@ class SearchBar extends React.Component {
 
 class Recipe extends React.Component {
   render () {
-    let string = this.props.recipee.toString();
+    let string = '';
+    for (var i=0;i<this.props.recipe.length;i++) {
+      if(this.props.recipe.length === 1) {
+        string = `${this.props.recipe[i]}`;  
+      } else {
+       string = `${string}, ${this.props.recipe[i]}`;
+      }
+    }
+
     return (
       <div>
-        <p>{this.props.recipe}</p>
-        <p>{string}</p>
+        <p className='fuckYa'>{this.props.ingredient}</p>
+        <p className='recipe'>Recipe: {string}</p>
       </div>
     );
   }
@@ -158,8 +166,8 @@ class FilterableProductTable extends React.Component {
     super(props);
     this.state = {
       filterText: '',
-      recipe: 'Ingredients',
-      recipee: []
+      ingredient: 'Ingredients',
+      recipe: []
     };
 
     this.passTarget = this.passTarget.bind(this);
@@ -167,15 +175,15 @@ class FilterableProductTable extends React.Component {
   }
 
   passTarget(e) {
-    let temp = this.state.recipee;
-    if(temp.includes(e)){
-      temp.splice(temp.indexOf(e),1)
+    let recipeArr = this.state.recipe;
+    if(recipeArr.includes(e)){
+      recipeArr.splice(recipeArr.indexOf(e),1)
     } else {
-      temp.push(e)
+      recipeArr.push(e)
     }
     this.setState({
-      recipe: `Fuck ya, ${e}!`,
-      recipee: temp
+      ingredient: `Fuck ya, ${e}!`,
+      recipe: recipeArr
     })
   }
 
@@ -193,7 +201,7 @@ class FilterableProductTable extends React.Component {
           inStockOnly={this.state.inStockOnly}
           onFilterTextInput={this.handleFilterTextInput}
         />
-        <Recipe recipe={this.state.recipe} recipee={this.state.recipee}/>
+        <Recipe recipe={this.state.recipe} ingredient={this.state.ingredient}/>
         <Table products={this.props.products} 
                filterText={this.state.filterText}
                passTarget={this.passTarget}
