@@ -29,8 +29,13 @@
 }
 
 .recipe {
-  height: 60px;
   display: block;
+  text-align: left;
+  padding: 8px 0 0 8px;
+}
+
+.yumm{
+  color: blue;
 }
 
 .table {
@@ -52,22 +57,23 @@
 }
 
 .tableRows {
+  display: block;
   text-align: left;
   border: 1px solid;
   border-radius: 10px;
-  height: 40px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 16px 16px;
+  margin: 0 4px 4px 0;
 }
 
 .highlight {
   background-color: lightblue;
 }
 
-.recipe {
-  text-align: left;
+.search {
+  padding: 8px;
+  font-size: 14px;
 }
 
-.fuckYa {
-  color: blue;
+.searchForm {
+  text-align: left;
 }

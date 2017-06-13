@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Smoothie Creator</h2>
         </div>
         <FilterableProductTable products={PRODUCTS} />
       </div>
@@ -132,8 +132,9 @@ class SearchBar extends React.Component {
   
   render() {
     return (
-      <form>
+      <form className='searchForm'>
         <input
+          className='search'
           type="text"
           placeholder="Search..."
           value={this.props.filterText}
@@ -158,7 +159,7 @@ class Recipe extends React.Component {
     }
     return (
       <div>
-        <p className='fuckYa'>{this.props.ingredient}</p>
+        <p className='yumm'>{this.props.ingredient}</p>
         <p className='recipe'>Recipe: {string}</p>
       </div>
     );
@@ -170,7 +171,7 @@ class FilterableProductTable extends React.Component {
     super(props);
     this.state = {
       filterText: '',
-      ingredient: 'Ingredients',
+      ingredient: 'Choose Ingredients',
       recipe: []
     };
 
@@ -186,7 +187,7 @@ class FilterableProductTable extends React.Component {
       recipeArr.push(e)
     }
     this.setState({
-      ingredient: `Fuck ya, ${e}!`,
+      ingredient: `Yumm, ${e}!`,
       recipe: recipeArr
     })
   }
@@ -200,12 +201,12 @@ class FilterableProductTable extends React.Component {
   render() {
     return (
       <div className='mainContainer'>
+        <Recipe recipe={this.state.recipe} 
+                ingredient={this.state.ingredient}/>      
         <SearchBar
           filterText={this.state.filterText}
           onFilterTextInput={this.handleFilterTextInput}
         />
-        <Recipe recipe={this.state.recipe} 
-                ingredient={this.state.ingredient}/>
         <Table products={this.props.products} 
                filterText={this.state.filterText}
                passTarget={this.passTarget}
