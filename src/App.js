@@ -216,7 +216,6 @@ class FilterableProductTable extends React.Component {
   }
 }
 
-
 var PRODUCTS = [
   {category: 'Base', price: '$49.99', stocked: true, name: 'Banana'},
   {category: 'Base', price: '$9.99', stocked: true, name: 'Avocado'},
