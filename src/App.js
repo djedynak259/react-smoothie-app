@@ -230,8 +230,7 @@ var PRODUCTS = [
   {category: 'Add-Ons', name: 'Cacao'},
   {category: 'Add-Ons', name: 'Spirulina'},
   {category: 'new row', name: 'dirt'},
-  {category: 'new row', name: 'stuff'}
-
+  {category: 'new row', name: 'stuff'},
 ];
 
 export default App;
