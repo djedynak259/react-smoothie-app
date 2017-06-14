@@ -217,20 +217,20 @@ class FilterableProductTable extends React.Component {
 }
 
 var PRODUCTS = [
-  {category: 'Base', price: '$49.99', stocked: true, name: 'Banana'},
-  {category: 'Base', price: '$9.99', stocked: true, name: 'Avocado'},
-  {category: 'Base', price: '$29.99', stocked: true, name: 'Coconut'},
-  {category: 'Liquid', price: '$99.99', stocked: true, name: 'Almond Milk'},
-  {category: 'Liquid', price: '$399.99', stocked: true, name: 'Organic Fruit Juice'},
-  {category: 'Fruits/Veg', price: '$199.99', stocked: true, name: 'Spinach'},
-  {category: 'Fruits/Veg', price: '$199.99', stocked: true, name: 'Kale'},
-  {category: 'Fruits/Veg', price: '$199.99', stocked: true, name: 'Strawberry'},
-  {category: 'Fruits/Veg', price: '$199.99', stocked: true, name: 'Blueberry'},
-  {category: 'Add-Ons', price: '$199.99', stocked: true, name: 'Maca'},
-  {category: 'Add-Ons', price: '$199.99', stocked: true, name: 'Cacao'},
-  {category: 'Add-Ons', price: '$199.99', stocked: true, name: 'Spirulina'},
-  {category: 'new row', price: '$199.99', stocked: true, name: 'dirt'},
-  {category: 'new row', price: '$199.99', stocked: true, name: 'stuff'}
+  {category: 'Base', name: 'Banana'},
+  {category: 'Base', name: 'Avocado'},
+  {category: 'Base', name: 'Coconut'},
+  {category: 'Liquid', name: 'Almond Milk'},
+  {category: 'Liquid', name: 'Organic Fruit Juice'},
+  {category: 'Fruits/Veg', name: 'Spinach'},
+  {category: 'Fruits/Veg', name: 'Kale'},
+  {category: 'Fruits/Veg', name: 'Strawberry'},
+  {category: 'Fruits/Veg', name: 'Blueberry'},
+  {category: 'Add-Ons', name: 'Maca'},
+  {category: 'Add-Ons', name: 'Cacao'},
+  {category: 'Add-Ons', name: 'Spirulina'},
+  {category: 'new row', name: 'dirt'},
+  {category: 'new row', name: 'stuff'}
 
 ];
 
