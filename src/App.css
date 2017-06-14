@@ -60,7 +60,7 @@
 .tableRows {
   display: block;
   text-align: left;
-  border: 1px solid;
+  border: 1px solid #969393;
   border-radius: 10px;
   padding: 16px 16px;
   margin: 0 4px 4px 0;
@@ -68,16 +68,16 @@
 }
 
 .tableRows:hover {
-  background-color: lightgrey;
+  background-color: #ececec;
 
 }
 
 .highlight {
-  background-color: lightblue;
+  background-color: #9ee7ff;
 }
 
 .highlight:hover {
-  background-color: #54c5e5;
+  background-color: #8ae2fb;
 }
 
 .search {
