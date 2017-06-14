@@ -51,9 +51,10 @@
 }
 
 .tableHeaders {
+  font-family: 'Droid Sans', sans-serif;
   display: flex;
   padding: 20px 0 10px 14px;
-  text-decoration: underline;
+
 }
 
 .tableRows {
@@ -63,10 +64,20 @@
   border-radius: 10px;
   padding: 16px 16px;
   margin: 0 4px 4px 0;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 1px 3px 0 rgba(0,0,0,0.19);
+}
+
+.tableRows:hover {
+  background-color: lightgrey;
+
 }
 
 .highlight {
   background-color: lightblue;
+}
+
+.highlight:hover {
+  background-color: #54c5e5;
 }
 
 .search {
