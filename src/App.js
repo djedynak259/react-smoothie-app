@@ -207,7 +207,7 @@ class FilterableProductTable extends React.Component {
 
   render() {
     return (
-      <div className='mainContainer'>
+      <div>
         <div className='actionWrapper'>
           <ActionText ingredient={this.state.ingredient}/>    
           <SearchBar
@@ -215,12 +215,14 @@ class FilterableProductTable extends React.Component {
             onFilterTextInput={this.handleFilterTextInput}
           />
           <Recipe recipe={this.state.recipe} />  
-        </div>  
-        <Table products={this.props.products} 
+        </div> 
+        <div className='mainContainer'>
+          <Table products={this.props.products} 
                filterText={this.state.filterText}
                passTarget={this.passTarget}
-        />
-      </div>
+          />
+        </div>
+      </div> 
     );
   }
 }
