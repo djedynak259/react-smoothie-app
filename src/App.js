@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -7,7 +6,6 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h2>Smoothie Creator</h2>
         </div>
         <FilterableProductTable products={PRODUCTS} />
@@ -158,9 +156,18 @@ class Recipe extends React.Component {
       }
     }
     return (
-      <div>
+      <div className='recipe'>
+        <p>Recipe: {string}</p>
+      </div>
+    );
+  }
+}
+
+class ActionText extends React.Component {
+  render () {
+    return (
+      <div className='actionText'>
         <p className='yumm'>{this.props.ingredient}</p>
-        <p className='recipe'>Recipe: {string}</p>
       </div>
     );
   }
@@ -201,12 +208,14 @@ class FilterableProductTable extends React.Component {
   render() {
     return (
       <div className='mainContainer'>
-        <Recipe recipe={this.state.recipe} 
-                ingredient={this.state.ingredient}/>      
-        <SearchBar
-          filterText={this.state.filterText}
-          onFilterTextInput={this.handleFilterTextInput}
-        />
+        <div className='actionWrapper'>
+          <ActionText ingredient={this.state.ingredient}/>    
+          <SearchBar
+            filterText={this.state.filterText}
+            onFilterTextInput={this.handleFilterTextInput}
+          />
+          <Recipe recipe={this.state.recipe} />  
+        </div>  
         <Table products={this.props.products} 
                filterText={this.state.filterText}
                passTarget={this.passTarget}
