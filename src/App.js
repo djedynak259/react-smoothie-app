@@ -253,7 +253,7 @@ var PRODUCTS = [
   {category: 'Fats & Proteins', name: 'Sprouts'},
   {category: 'Add-Ons', name: 'Maca'},
   {category: 'Add-Ons', name: 'Cinnamon'},
-  {category: 'Add-Ons', name: 'Vinilla'},
+  {category: 'Add-Ons', name: 'Vanilla'},
   {category: 'Add-Ons', name: 'Cucumbers'},
   {category: 'Add-Ons', name: 'Beets'},
   {category: 'Add-Ons', name: 'Ginger Root'},
