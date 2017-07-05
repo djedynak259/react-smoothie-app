@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-modal":
+    "react-awesome-modal": "^2.0.1",
+    "react-dom": "^15.5.4"
   },
   "devDependencies": {
     "react-scripts": "1.0.7"

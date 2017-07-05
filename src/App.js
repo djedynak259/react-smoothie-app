@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Modal from 'react-modal';
+import Modal from 'react-awesome-modal';
 import './App.css';
 
 class App extends Component {
@@ -15,40 +15,47 @@ class App extends Component {
   }
 }
 
-ReactModal.setAppElement('#main');
+class Examples extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            visible : false
+        }
+    }
 
-class ExampleApp extends React.Component {
-  constructor () {
-    super();
-    this.state = {
-      showModal: false
-    };
-    
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-  }
-  
-  handleOpenModal () {
-    this.setState({ showModal: true });
-  }
-  
-  handleCloseModal () {
-    this.setState({ showModal: false });
-  }
-  
-  render () {
-    return (
-      <div>
-        <button onClick={this.handleOpenModal}>Trigger Modal</button>
-        <ReactModal 
-           isOpen={this.state.showModal}
-           contentLabel="Minimal Modal Example"
-        >
-          <button onClick={this.handleCloseModal}>Close Modal</button>
-        </ReactModal>
-      </div>
-    );
-  }
+    openModal() {
+        this.setState({
+            visible : true
+        });
+    }
+
+    closeModal() {
+        this.setState({
+            visible : false
+        });
+    }
+
+    render() {
+        return (
+            <section>
+                <h1>React-Modal Examples</h1>
+                <input type="button" value="Open" onClick={() => this.openModal()} />
+                <Modal 
+                    visible={this.state.visible}
+                    width="400"
+                    height="300"
+                    effect="fadeInUp"
+                    onClickAway={() => this.closeModal()}
+                >
+                    <div>
+                        <h1>Title</h1>
+                        <p>Some Contents</p>
+                        <input type="button" value="Close" onClick={() => this.closeModal()} />
+                    </div>
+                </Modal>
+            </section>
+        );
+    }
 }
 
 class ProductCategoryRow extends React.Component {
@@ -252,6 +259,7 @@ class FilterableProductTable extends React.Component {
             onFilterTextInput={this.handleFilterTextInput}
           />
           <Recipe recipe={this.state.recipe} />  
+          <Examples />
         </div> 
         <div className='mainContainer'>
           <Table products={this.props.products} 
