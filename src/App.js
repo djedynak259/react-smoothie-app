@@ -7,11 +7,14 @@ import PRODUCTS from './Data/PRODUCTS.js';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Smoothie Creator</h2>
+      <div>
+        <div className='background-image'></div>
+        <div className="App">
+          <div className="App-header">
+            <h2>Smoothie Creator</h2>
+          </div>
+          <FilterableProductTable products = {PRODUCTS}/>
         </div>
-        <FilterableProductTable products = {PRODUCTS}/>
       </div>
     );
   }

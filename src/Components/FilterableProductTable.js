@@ -48,7 +48,7 @@ class FilterableProductTable extends Component {
 
   render() {
     return (
-      <div>
+      <div className='content'>
         <div className='actionWrapper'>
           <ActionText 
             ingredient={this.state.ingredient}/>    

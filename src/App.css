@@ -1,29 +1,47 @@
-.App {
+body {
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background: url('./img/beach.jpg') no-repeat center center fixed ;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+  -webkit-filter: opacity(70%);  Safari 
+  filter: opacity(70%);
+}
+ 
+.App {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
 
 .App-header {
-  background-color: #222;
-  padding: 10px;
-  color: white;
-  /*margin-bottom: 2.5%;*/
+  width: 1240px;
+  margin: 40px auto 0;
 }
 
 .App-header h2 {
-  text-align: left;
-  margin: 0;  
-}
-
-.App-intro {
-  font-size: large;
-}
-
-.actionText {
-  text-align: left;
+  color: white;
+  margin: 0;
 }
 
 .actionText p {
@@ -31,20 +49,23 @@
 }
 
 .actionWrapper {
-  /*border: 1px solid;*/
-  /*border-radius: 5px;*/
-  padding: 10px;
-  background-color: #222;
+
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.content {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+.highlight {
+  background-color: #9ee7ff;
+}
+
+.highlight:hover {
+  background-color: #8ae2fb;
 }
 
 .mainContainer {
-  width: 95%;
-  margin: 0 auto;
 }
 
 .recipe {
@@ -58,8 +79,14 @@
   color: white;
 }
 
-.yumm{
-  color: blue;
+.search {
+  padding: 6px;
+  font-size: 14px;
+}
+
+.searchForm {
+  text-align: left;
+  display: inline-block;
 }
 
 .table {
@@ -93,23 +120,8 @@
 
 .tableRows:hover {
   background-color: #ececec;
-
 }
 
-.highlight {
-  background-color: #9ee7ff;
-}
-
-.highlight:hover {
-  background-color: #8ae2fb;
-}
-
-.search {
-  padding: 6px;
-  font-size: 14px;
-}
-
-.searchForm {
-  text-align: left;
-  display: inline-block;
+.yumm{
+  color: blue;
 }
