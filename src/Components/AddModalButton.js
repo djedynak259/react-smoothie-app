@@ -37,7 +37,9 @@ class AddModalButton extends Component {
     }
 
     handleSubmit(){
-      console.log('test');
+        var obj = [];
+      obj.push({category:this.state.category, name:this.state.name})
+      console.log(obj)
     }    
 
     render() {
