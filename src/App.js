@@ -15,12 +15,17 @@ class App extends Component {
   }
 }
 
-class Examples extends Component {
+class ModalButton extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            visible : false
+            visible : false,
+            name: '',
+            category: ''
         }
+
+        this.handleChangeName = this.handleChangeName.bind(this); 
+        this.handleChangeCategory = this.handleChangeCategory.bind(this);         
     }
 
     openModal() {
@@ -31,25 +36,50 @@ class Examples extends Component {
 
     closeModal() {
         this.setState({
-            visible : false
+            visible : false,
+            name:'',
+            category:''
         });
     }
+
+    handleChangeName (event) {
+      this.setState({name: event.target.value});
+    }
+
+    handleChangeCategory (event) {
+      this.setState({category: event.target.value});
+    }    
 
     render() {
         return (
             <section>
-                <h1>React-Modal Examples</h1>
-                <input type="button" value="Open" onClick={() => this.openModal()} />
+                <input type="button" value="Add Ingredients" onClick={() => this.openModal()} />
                 <Modal 
                     visible={this.state.visible}
-                    width="400"
-                    height="300"
+                    width="800"
+                    height="800"
                     effect="fadeInUp"
                     onClickAway={() => this.closeModal()}
                 >
                     <div>
                         <h1>Title</h1>
                         <p>Some Contents</p>
+                        <form>
+                          <input
+                            className='search'
+                            type="text"
+                            placeholder="Name"
+                            value={this.state.name}
+                            onChange={this.handleChangeName}
+                          /> 
+                          <input
+                            className='search'
+                            type="text"
+                            placeholder="Category"
+                            value={this.state.category}
+                            onChange={this.handleChangeCategory}
+                          />                                                    
+                        </form>
                         <input type="button" value="Close" onClick={() => this.closeModal()} />
                     </div>
                 </Modal>
@@ -259,7 +289,7 @@ class FilterableProductTable extends React.Component {
             onFilterTextInput={this.handleFilterTextInput}
           />
           <Recipe recipe={this.state.recipe} />  
-          <Examples />
+          <ModalButton />
         </div> 
         <div className='mainContainer'>
           <Table products={this.props.products} 
@@ -296,7 +326,6 @@ var PRODUCTS = [
   {category: 'Fats & Proteins', name: 'Chai Seeds'},
   {category: 'Fats & Proteins', name: 'Avocado'},
   {category: 'Fats & Proteins', name: 'Sprouts'},
-  {category: 'Add-Ons', name: 'Maca'},
   {category: 'Add-Ons', name: 'Cinnamon'},
   {category: 'Add-Ons', name: 'Vanilla'},
   {category: 'Add-Ons', name: 'Cucumbers'},
