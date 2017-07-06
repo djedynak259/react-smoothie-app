@@ -2,6 +2,27 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+ 
+.app {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+
+}
+
+.app-header {
+  padding-top: 40px;
+}
+
+.app-header h2 {
+  color: white;
+  margin: 0;
+}
+
+.actionText p {
+  color: white;
+}
 
 .background-image {
   position: fixed;
@@ -23,33 +44,8 @@ body {
   -o-filter: blur(3px);
   -ms-filter: blur(3px);
   filter: blur(3px);
-  -webkit-filter: opacity(70%);  Safari 
+  -webkit-filter: opacity(70%);
   filter: opacity(70%);
-}
- 
-.App {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-}
-
-.App-header {
-  width: 1240px;
-  margin: 40px auto 0;
-}
-
-.App-header h2 {
-  color: white;
-  margin: 0;
-}
-
-.actionText p {
-  color: white;
-}
-
-.actionWrapper {
-
 }
 
 .content {
@@ -63,9 +59,6 @@ body {
 
 .highlight:hover {
   background-color: #8ae2fb;
-}
-
-.mainContainer {
 }
 
 .recipe {

@@ -9,10 +9,7 @@ class App extends Component {
     return (
       <div>
         <div className='background-image'></div>
-        <div className="App">
-          <div className="App-header">
-            <h2>Smoothie Creator</h2>
-          </div>
+        <div className="app">
           <FilterableProductTable products = {PRODUCTS}/>
         </div>
       </div>
