@@ -14,9 +14,9 @@ class SearchBar extends Component {
     return (
       <form className='searchForm'>
         <input
-          className='search'
+          className='searchInput'
           type="text"
-          placeholder="Search..."
+          placeholder="Search Ingredients..."
           value={this.props.filterText}
           onChange={this.handleFilterTextInputChange}/>
       </form>

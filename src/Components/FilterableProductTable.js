@@ -51,25 +51,23 @@ class FilterableProductTable extends Component {
       <div className='content'>
         <div className="app-header">
           <h2>Smoothie Creator</h2>
+          <SearchBar
+            filterText={this.state.filterText}
+            onFilterTextInput={this.handleFilterTextInput}/>           
+          <AddModalButton 
+            products={this.state.products}
+            addIngretient={this.handleAddIngredient}/>
         </div>
         <div className='actionWrapper'>
           <ActionText 
             ingredient={this.state.ingredient}/>    
-          <SearchBar
-            filterText={this.state.filterText}
-            onFilterTextInput={this.handleFilterTextInput}/>
           <Recipe 
             recipe={this.state.recipe}/>  
-          <AddModalButton 
-            products={this.state.products}
-            addIngretient={this.handleAddIngredient}/>
         </div> 
-        <div className='mainContainer'>
-          <Table 
-            products={this.state.products} 
-            filterText={this.state.filterText}
-            passTarget={this.passTarget}/>
-        </div>
+        <Table 
+          products={this.state.products} 
+          filterText={this.state.filterText}
+          passTarget={this.passTarget}/>
       </div> 
     );
   }

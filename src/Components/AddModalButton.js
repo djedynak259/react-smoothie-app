@@ -52,33 +52,32 @@ class AddModalButton extends Component {
 
   render() {
       return (
-          <section>
-              <input type="button" value="Add Ingredients" onClick={() => this.openModal()} />
+          <section className='addSection'>
+              <input className='button' type="button" value="Add Ingredients" onClick={() => this.openModal()} />
               <Modal 
-                  visible={this.state.visible}
-                  width="600"
-                  height="600"
-                  effect="fadeInUp"
-                  onClickAway={() => this.closeModal()}
-              >
-                  <div>
-                      <h1>Title</h1>
-                      <p>Some Contents</p>
-                        <input
-                          className='search'
-                          type="text"
-                          placeholder="Name"
-                          value={this.state.name}
-                          onChange={this.handleChangeName}/> 
-                        <input
-                          className='search'
-                          type="text"
-                          placeholder="Category"
-                          value={this.state.category}
-                          onChange={this.handleChangeCategory}/>  
-                        <input type="button" value="Submit" onClick={this.handleSubmit}/>
-                      <input type="button" value="Close" onClick={() => this.closeModal()} />
-                  </div>
+                visible={this.state.visible}
+                width="600"
+                height="600"
+                effect="fadeInUp"
+                onClickAway={() => this.closeModal()}>
+                <div>
+                  <h1>Add Ingredient</h1>
+                  <p>Enter ingredient name and category.</p>
+                  <input
+                    className='search'
+                    type="text"
+                    placeholder="Name"
+                    value={this.state.name}
+                    onChange={this.handleChangeName}/> 
+                  <input
+                    className='search'
+                    type="text"
+                    placeholder="Category"
+                    value={this.state.category}
+                    onChange={this.handleChangeCategory}/>  
+                  <input type="button" value="Submit" onClick={this.handleSubmit}/>
+                  <input type="button" value="Close" onClick={() => this.closeModal()} />
+                </div>
               </Modal>
           </section>
       );

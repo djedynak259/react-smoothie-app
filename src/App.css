@@ -3,6 +3,11 @@ body {
   box-sizing: border-box;
 }
  
+.addSection {
+  display: inline-block;
+  float: right;
+}
+
 .app {
   position: fixed;
   z-index: 9999;
@@ -16,6 +21,7 @@ body {
 }
 
 .app-header h2 {
+  display: inline-block;
   color: white;
   margin: 0;
 }
@@ -48,6 +54,19 @@ body {
   filter: opacity(70%);
 }
 
+.button {
+  border: 1px white solid;
+  background-color: white;
+  border-radius: 5px;
+  padding: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: lightgrey;
+}
+
 .content {
   width: 1240px;
   margin: 0 auto;
@@ -64,7 +83,7 @@ body {
 .recipe {
   display: inline-block;
   text-align: left;
-  margin: 0 0 0 20px;
+  margin: 0 0 20px 0;
 }
 
 .recipe p {
@@ -72,19 +91,26 @@ body {
   color: white;
 }
 
-.search {
+.searchInput {
   padding: 6px;
   font-size: 14px;
+  border: none;
 }
 
 .searchForm {
+  float: right;
   text-align: left;
   display: inline-block;
+  border: 1px white solid;
+  border-radius: 2px;
+  margin-left: 20px;
 }
 
 .table {
   display: flex;
   flex-flow: row wrap;
+/*  border: 1px white solid;
+  border-radius: 2px;*/
 }
 
 .tableColumn {
@@ -92,6 +118,10 @@ body {
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
+  background: white;
+  border: 1px white solid;
+  border-radius: 10px;
+  margin: 4px;
 }
 
 .tableHeaders {
@@ -107,7 +137,7 @@ body {
   border: 1px solid #969393;
   border-radius: 10px;
   padding: 16px 16px;
-  margin: 0 4px 4px 0;
+  margin: 4px 4px 4px 4px;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 1px 3px 0 rgba(0,0,0,0.19);
 }
 
