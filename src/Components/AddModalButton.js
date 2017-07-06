@@ -43,6 +43,11 @@ class AddModalButton extends Component {
     PRODUCTS.push({category:this.state.category, name:this.state.name})
     this.props.addIngretient()
     console.log(PRODUCTS)
+    this.setState({
+        visible : false,
+        name:'',
+        category:''
+    });
   }    
 
   render() {
