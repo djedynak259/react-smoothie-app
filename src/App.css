@@ -26,8 +26,9 @@ body {
   margin: 0;
 }
 
-.actionText p {
+.actionText {
   color: white;
+  margin: ;
 }
 
 .background-image {
@@ -76,14 +77,8 @@ body {
   background-color: #9ee7ff;
 }
 
-.highlight:hover {
-  background-color: #8ae2fb;
-}
-
 .recipe {
-  display: inline-block;
-  text-align: left;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
 }
 
 .recipe p {
@@ -141,10 +136,10 @@ body {
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 1px 3px 0 rgba(0,0,0,0.19);
 }
 
-.tableRows:hover {
-  background-color: #ececec;
+.tableRows.highlight:hover {
+  background-color: #8ae2fb;
 }
 
-.yumm{
-  color: blue;
+.tableRows:hover {
+  background-color: #ececec;
 }

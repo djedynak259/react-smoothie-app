@@ -58,12 +58,10 @@ class FilterableProductTable extends Component {
             products={this.state.products}
             addIngretient={this.handleAddIngredient}/>
         </div>
-        <div className='actionWrapper'>
-          <ActionText 
-            ingredient={this.state.ingredient}/>    
-          <Recipe 
-            recipe={this.state.recipe}/>  
-        </div> 
+        <ActionText 
+          ingredient={this.state.ingredient}/>    
+        <Recipe 
+          recipe={this.state.recipe}/>  
         <Table 
           products={this.state.products} 
           filterText={this.state.filterText}
