@@ -1,5 +1,3 @@
-
-
 var PRODUCTS = [
   {category: 'Base', name: 'Banana'},
   {category: 'Base', name: 'Avocado'},
@@ -27,7 +25,7 @@ var PRODUCTS = [
   {category: 'Add-Ons', name: 'Vanilla'},
   {category: 'Add-Ons', name: 'Cucumbers'},
   {category: 'Add-Ons', name: 'Beets'},
-  {category: 'Add-Ons', name: 'Ginger Root'},
+  {category: 'Add-Ons', name: 'Ginger Root'}
 ];
 
 export default PRODUCTS;

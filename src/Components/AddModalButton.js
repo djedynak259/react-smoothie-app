@@ -40,8 +40,9 @@ class AddModalButton extends Component {
   }
 
   handleSubmit(){
-    this.state.products.push({category:this.state.category, name:this.state.name})
-    console.log(this.state.products)
+    PRODUCTS.push({category:this.state.category, name:this.state.name})
+    this.props.addIngretient()
+    console.log(PRODUCTS)
   }    
 
   render() {
