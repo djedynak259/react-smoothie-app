@@ -2,6 +2,49 @@ import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import './App.css';
 
+// class Examples extends Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             visible : false
+//         }
+//     }
+
+//     openModal() {
+//         this.setState({
+//             visible : true
+//         });
+//     }
+
+//     closeModal() {
+//         this.setState({
+//             visible : false
+//         });
+//     }
+
+//     render() {
+//         return (
+//             <section>
+//                 <h1>React-Modal Examples</h1>
+//                 <input type="button" value="Open" onClick={() => this.openModal()} />
+//                 <Modal 
+//                     visible={this.state.visible}
+//                     width="400"
+//                     height="300"
+//                     effect="fadeInUp"
+//                     onClickAway={() => this.closeModal()}
+//                 >
+//                     <div>
+//                         <h1>Title</h1>
+//                         <p>Some Contents</p>
+//                         <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
+//                     </div>
+//                 </Modal>
+//             </section>
+//         );
+//     }
+// }
+
 class App extends Component {
   render() {
     return (
@@ -9,13 +52,13 @@ class App extends Component {
         <div className="App-header">
           <h2>Smoothie Creator</h2>
         </div>
-        <FilterableProductTable products={PRODUCTS} />
+        <FilterableProductTable />
       </div>
     );
   }
 }
 
-class ModalButton extends Component {
+class AddModalButton extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -48,6 +91,11 @@ class ModalButton extends Component {
 
     handleChangeCategory (event) {
       this.setState({category: event.target.value});
+    }
+
+    handleSubmit(){
+      console.log('test');
+      this.props.passSubmit()
     }    
 
     render() {
@@ -64,7 +112,6 @@ class ModalButton extends Component {
                     <div>
                         <h1>Title</h1>
                         <p>Some Contents</p>
-                        <form>
                           <input
                             className='search'
                             type="text"
@@ -78,8 +125,8 @@ class ModalButton extends Component {
                             placeholder="Category"
                             value={this.state.category}
                             onChange={this.handleChangeCategory}
-                          />                                                    
-                        </form>
+                          />  
+                          <input type="button" value="Submit" onClick={this.handleSubmit}/>
                         <input type="button" value="Close" onClick={() => this.closeModal()} />
                     </div>
                 </Modal>
@@ -253,11 +300,13 @@ class FilterableProductTable extends React.Component {
     this.state = {
       filterText: '',
       ingredient: 'Choose Ingredients',
-      recipe: []
+      recipe: [],
+      products: PRODUCTS
     };
 
     this.passTarget = this.passTarget.bind(this);
     this.handleFilterTextInput = this.handleFilterTextInput.bind(this);
+    this.handleProductAdd = this.handleProductAdd.bind(this);
   }
 
   passTarget(e) {
@@ -279,6 +328,12 @@ class FilterableProductTable extends React.Component {
     });
   }
 
+  handleProductAdd(products) {
+    this.setState({
+      products: products
+    });
+  }
+
   render() {
     return (
       <div>
@@ -289,10 +344,12 @@ class FilterableProductTable extends React.Component {
             onFilterTextInput={this.handleFilterTextInput}
           />
           <Recipe recipe={this.state.recipe} />  
-          <ModalButton />
+          <AddModalButton products={this.state.products}
+                          onHandleProductAdd={this.handleProductAdd}
+          />
         </div> 
         <div className='mainContainer'>
-          <Table products={this.props.products} 
+          <Table products={this.state.products} 
                filterText={this.state.filterText}
                passTarget={this.passTarget}
           />
