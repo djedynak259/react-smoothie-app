@@ -1,80 +1,82 @@
 import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
+import PRODUCTS from '../Data/PRODUCTS.js';
 
 class AddModalButton extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            visible : false,
-            name: '',
-            category: ''
-        }
+  constructor(props) {
+      super(props);
+      this.state = {
+          visible : false,
+          name: '',
+          category: '',
+          products: PRODUCTS
+      }
 
-        this.handleChangeName = this.handleChangeName.bind(this); 
-        this.handleChangeCategory = this.handleChangeCategory.bind(this);         
-    }
+      this.handleChangeName = this.handleChangeName.bind(this); 
+      this.handleChangeCategory = this.handleChangeCategory.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);        
+  }
 
-    openModal() {
-        this.setState({
-            visible : true
-        });
-    }
+  openModal() {
+      this.setState({
+          visible : true
+      });
+  }
 
-    closeModal() {
-        this.setState({
-            visible : false,
-            name:'',
-            category:''
-        });
-    }
+  closeModal() {
+      this.setState({
+          visible : false,
+          name:'',
+          category:''
+      });
+  }
 
-    handleChangeName (event) {
-      this.setState({name: event.target.value});
-    }
+  handleChangeName (event) {
+    this.setState({name: event.target.value});
+  }
 
-    handleChangeCategory (event) {
-      this.setState({category: event.target.value});
-    }
+  handleChangeCategory (event) {
+    this.setState({category: event.target.value});
+  }
 
-    handleSubmit(){
-        var obj = [];
-      obj.push({category:this.state.category, name:this.state.name})
-      console.log(obj)
-    }    
+  handleSubmit(){
+    this.state.products.push({category:this.state.category, name:this.state.name})
+    console.log(this.state.products)
+  }    
 
-    render() {
-        return (
-            <section>
-                <input type="button" value="Add Ingredients" onClick={() => this.openModal()} />
-                <Modal 
-                    visible={this.state.visible}
-                    width="600"
-                    height="600"
-                    effect="fadeInUp"
-                    onClickAway={() => this.closeModal()}
-                >
-                    <div>
-                        <h1>Title</h1>
-                        <p>Some Contents</p>
-                          <input
-                            className='search'
-                            type="text"
-                            placeholder="Name"
-                            value={this.state.name}
-                            onChange={this.handleChangeName}/> 
-                          <input
-                            className='search'
-                            type="text"
-                            placeholder="Category"
-                            value={this.state.category}
-                            onChange={this.handleChangeCategory}/>  
-                          <input type="button" value="Submit" onClick={this.handleSubmit}/>
-                        <input type="button" value="Close" onClick={() => this.closeModal()} />
-                    </div>
-                </Modal>
-            </section>
-        );
-    }
+  render() {
+      return (
+          <section>
+              <input type="button" value="Add Ingredients" onClick={() => this.openModal()} />
+              <Modal 
+                  visible={this.state.visible}
+                  width="600"
+                  height="600"
+                  effect="fadeInUp"
+                  onClickAway={() => this.closeModal()}
+              >
+                  <div>
+                      <h1>Title</h1>
+                      <p>Some Contents</p>
+                        <input
+                          className='search'
+                          type="text"
+                          placeholder="Name"
+                          value={this.state.name}
+                          onChange={this.handleChangeName}/> 
+                        <input
+                          className='search'
+                          type="text"
+                          placeholder="Category"
+                          value={this.state.category}
+                          onChange={this.handleChangeCategory}/>  
+                        <input type="button" value="Submit" onClick={this.handleSubmit}/>
+                      <input type="button" value="Close" onClick={() => this.closeModal()} />
+                  </div>
+              </Modal>
+          </section>
+      );
+  }
 }
 
 // class Examples extends Component {

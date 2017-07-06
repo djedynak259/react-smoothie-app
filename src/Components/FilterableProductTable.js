@@ -48,8 +48,8 @@ class FilterableProductTable extends Component {
             filterText={this.state.filterText}
             onFilterTextInput={this.handleFilterTextInput}/>
           <Recipe 
-            recipe={this.state.recipe} />  
-          <AddModalButton />
+            recipe={this.state.recipe}/>  
+          <AddModalButton products={this.state.products}/>
         </div> 
         <div className='mainContainer'>
           <Table 
