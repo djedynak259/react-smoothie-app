@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ActionText extends React.Component {
+class ActionText extends Component {
   render () {
     return (
       <div className='actionText'>

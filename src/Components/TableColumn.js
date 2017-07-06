@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ProductCategoryRow from './ProductCategoryRow.js';
 import ProductRow from './ProductRow.js';
 
-class TableColumn extends React.Component {
+class TableColumn extends Component {
   constructor (props) {
     super(props);
     this.passTarget = this.passTarget.bind(this);

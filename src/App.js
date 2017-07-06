@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import AddModalButton from './Components/AddModalButton.js';
-import ProductCategoryRow from './Components/ProductCategoryRow.js';
-import ProductRow from './Components/ProductRow.js';
-import TableColumn from './Components/TableColumn.js';
-import Table from './Components/Table.js';
-import SearchBar from './Components/SearchBar.js';
-import Recipe from './Components/Recipe.js';
-import ActionText from './Components/ActionText.js';
 import FilterableProductTable from './Components/FilterableProductTable.js';
 
 

@@ -5,7 +5,7 @@ import Recipe from './Recipe.js';
 import AddModalButton from './AddModalButton.js';
 import Table from './Table.js';
 
-class FilterableProductTable extends React.Component {
+class FilterableProductTable extends Component {
   constructor(props) {
     super(props);
     this.state = {

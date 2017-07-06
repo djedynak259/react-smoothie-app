@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TableColumn from './TableColumn.js';
 
-class Table extends React.Component {
+class Table extends Component {
   constructor(props) {
     super(props);
     this.passTarget = this.passTarget.bind(this);

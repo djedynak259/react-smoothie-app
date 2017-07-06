@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ProductRow extends React.Component {
+class ProductRow extends Component {
   constructor (props) {
     super(props);
     this.handleClassChange = this.handleClassChange.bind(this);

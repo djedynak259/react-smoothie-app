@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Recipe extends React.Component {
+class Recipe extends Component {
   render () {
     let string = '';
     let count = 0;
