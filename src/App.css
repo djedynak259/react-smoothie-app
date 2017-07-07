@@ -24,11 +24,16 @@ body {
   display: inline-block;
   color: white;
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal; 
+  font-size: 40px;
 }
 
 .actionText {
   color: white;
   margin: ;
+  font-family: 'Bellefair', serif;
+  font-size: 18px;
 }
 
 .background-image {
@@ -56,6 +61,7 @@ body {
 }
 
 .button {
+  font-size: 18px;
   border: 1px white solid;
   background-color: white;
   border-radius: 5px;
@@ -65,7 +71,7 @@ body {
 }
 
 .button:hover {
-  background-color: lightgrey;
+  background-color: #EAE3E2;
 }
 
 .content {
@@ -82,8 +88,10 @@ body {
 }
 
 .recipe p {
+  font-family: 'Bellefair', serif;
   margin: 0;
   color: white;
+  font-size: 18px;
 }
 
 .searchInput {
@@ -99,6 +107,7 @@ body {
   border: 1px white solid;
   border-radius: 2px;
   margin-left: 20px;
+  background-color: white;
 }
 
 .table {
@@ -141,5 +150,5 @@ body {
 }
 
 .tableRows:hover {
-  background-color: #ececec;
+  background-color: #EAE3E2;
 }
