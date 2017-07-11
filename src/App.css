@@ -12,12 +12,22 @@ body {
   position: absolute;
   bottom: 10px;
   right: 64px;
+  border: 1px solid grey !important;
 }
 
 .addModalClose {
   position: absolute;
   bottom: 10px;
   right: 10px;
+  border: 1px solid grey !important;
+}
+
+.addModalAdd:hover {
+  background-color: #9ee7ff !important;
+}
+
+.addModalClose:hover {
+  background-color: #EAE3E2 !important;
 }
 
 .app {
@@ -25,7 +35,8 @@ body {
   z-index: 9999;
   left: 0;
   right: 0;
-
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .app-header {
@@ -87,12 +98,21 @@ body {
 }
 
 .content {
-  max-width: 1240px;
-  margin: 0 auto;
+  margin: 0 10px;
 }
 
 .highlight {
   background-color: #9ee7ff;
+}
+
+.modalWrapper {
+  padding: 16px;
+  padding-bottom: 30px;
+}
+
+.modalWrapper h1 {
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .recipe {
@@ -110,6 +130,10 @@ body {
   padding: 6px;
   font-size: 14px;
   border: none;
+}
+
+.searchInput.addModal{
+  border: 1px solid grey;
 }
 
 .searchForm {

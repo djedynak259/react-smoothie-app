@@ -56,28 +56,28 @@ class AddModalButton extends Component {
               <input className='button' type="button" value="Add Ingredients" onClick={() => this.openModal()} />
               <Modal 
                 visible={this.state.visible}
-                width="500"
-                height="200"
+                width="360"
+                height="196"
                 effect="fadeInUp"
                 onClickAway={() => this.closeModal()}>
-
+                <div className='modalWrapper'>
                   <h1>Add Ingredient</h1>
                   <p>Enter ingredient name and category.</p>
                   <input
-                    className='search'
+                    className='searchInput addModal'
                     type="text"
                     placeholder="Name"
                     value={this.state.name}
                     onChange={this.handleChangeName}/> 
                   <input
-                    className='search'
+                    className='searchInput addModal'
                     type="text"
                     placeholder="Category"
                     value={this.state.category}
                     onChange={this.handleChangeCategory}/>  
                   <input className='addModalAdd button'type="button" value="Submit" onClick={this.handleSubmit}/>
                   <input className='addModalClose button' type="button" value="Close" onClick={() => this.closeModal()} />
-
+                </div>   
               </Modal>
           </section>
       );
