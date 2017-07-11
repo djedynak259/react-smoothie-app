@@ -8,6 +8,18 @@ body {
   float: right;
 }
 
+.addModalAdd {
+  position: absolute;
+  bottom: 10px;
+  right: 64px;
+}
+
+.addModalClose {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
 .app {
   position: fixed;
   z-index: 9999;
@@ -75,7 +87,7 @@ body {
 }
 
 .content {
-  width: 1240px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
