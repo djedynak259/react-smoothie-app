@@ -10,7 +10,7 @@ class App extends Component {
       <div>
         <div className='background-image'></div>
         <div className="app">
-          <FilterableProductTable products = {this.props.ingredients}/>
+          <FilterableProductTable ingredients = {this.props.ingredients}/>
         </div>
       </div>
     );

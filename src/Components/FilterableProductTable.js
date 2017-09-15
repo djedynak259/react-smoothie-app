@@ -4,7 +4,6 @@ import SearchBar from './SearchBar.js';
 import Recipe from './Recipe.js';
 import AddModalButton from './AddModalButton.js';
 import Table from './Table.js';
-import PRODUCTS from '../Data/PRODUCTS.js';
 
 class FilterableProductTable extends Component {
   constructor(props) {
@@ -13,7 +12,7 @@ class FilterableProductTable extends Component {
       filterText: '',
       ingredient: 'Choose Ingredients',
       recipe: [],
-      products: this.props.products
+      products: this.props.ingredients
     };
 
     this.passTarget = this.passTarget.bind(this);
@@ -42,7 +41,7 @@ class FilterableProductTable extends Component {
 
   handleAddIngredient() {
     this.setState({
-      products: PRODUCTS
+      products: this.props.ingredients
     });
   }  
 
@@ -63,7 +62,7 @@ class FilterableProductTable extends Component {
         <Recipe 
           recipe={this.state.recipe}/>  
         <Table 
-          products={this.state.products} 
+          products={this.props.ingredients} 
           filterText={this.state.filterText}
           passTarget={this.passTarget}/>
       </div> 

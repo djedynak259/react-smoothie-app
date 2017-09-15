@@ -26,7 +26,7 @@ class TableColumn extends Component {
     return (
       <table className='tableColumn'>
         <thead>
-          <ProductCategoryRow category={column} />
+          <ProductCategoryRow key={column +1} category={column} />
         </thead>
         <tbody>{rows}</tbody>
       </table>
