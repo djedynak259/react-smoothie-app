@@ -40,7 +40,6 @@ class AddModalButton extends Component {
 
   handleSubmit(){
     this.props.dispatch(actions.addIngredient(this.state.name, this.state.category))
-    
     this.setState({
         visible : false,
         name:'',

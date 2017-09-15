@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import IngredientApp from './Components/FilterableProductTable.js';
+import IngredientApp from './Components/IngredientApp.js';
 import {connect} from 'react-redux';
 
 

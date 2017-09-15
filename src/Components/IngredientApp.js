@@ -11,13 +11,11 @@ class IngredientApp extends Component {
     this.state = {
       filterText: '',
       ingredient: 'Choose Ingredients',
-      recipe: [],
-      products: this.props.ingredients
+      recipe: []
     };
 
     this.passTarget = this.passTarget.bind(this);
     this.handleFilterTextInput = this.handleFilterTextInput.bind(this);
-    this.handleAddIngredient = this.handleAddIngredient.bind(this);
   }
 
   passTarget(e) {
@@ -39,12 +37,6 @@ class IngredientApp extends Component {
     });
   }
 
-  handleAddIngredient() {
-    this.setState({
-      products: this.props.ingredients
-    });
-  }  
-
   render() {
     return (
       <div className='content'>
@@ -54,16 +46,14 @@ class IngredientApp extends Component {
             filterText={this.state.filterText}
             onFilterTextInput={this.handleFilterTextInput}/>           
           <AddModalButton 
-            products={this.state.products}
-            dispatch = {this.props.dispatch}
-            addIngretient={this.handleAddIngredient}/>
+            dispatch = {this.props.dispatch}/>
         </div>
         <ActionText 
           ingredient={this.state.ingredient}/>    
         <Recipe 
           recipe={this.state.recipe}/>  
         <Table 
-          products={this.props.ingredients} 
+          ingredients={this.props.ingredients} 
           filterText={this.state.filterText}
           passTarget={this.passTarget}/>
       </div> 

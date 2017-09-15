@@ -14,16 +14,16 @@ class Table extends Component {
   render() {
     var columns = [];
     var lastCategory = null;
-    this.props.products.forEach((product) => {
-      if (product.category !== lastCategory) {
+    this.props.ingredients.forEach((ingredient) => {
+      if (ingredient.category !== lastCategory) {
         columns.push(<TableColumn passTarget={this.passTarget} 
-                                  products={this.props.products} 
-                                  category={product.category} 
-                                  key={product.category}
+                                  ingredients={this.props.ingredients} 
+                                  category={ingredient.category} 
+                                  key={ingredient.category}
                                   filterText={this.props.filterText} 
                                   />);
       }
-      lastCategory = product.category;
+      lastCategory = ingredient.category;
     });
 
     return (

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ProductRow extends Component {
+class IngredientItem extends Component {
   constructor (props) {
     super(props);
     this.handleClassChange = this.handleClassChange.bind(this);
@@ -20,11 +20,11 @@ class ProductRow extends Component {
      return (
       <tr>
         <td className={this.state.classN} onClick={this.handleClassChange}>
-          {this.props.product.name}
+          {this.props.ingredient.name}
         </td>
       </tr>
     );
   }
 }
 
-export default ProductRow
+export default IngredientItem

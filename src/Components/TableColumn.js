@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ProductCategoryRow from './ProductCategoryRow.js';
-import ProductRow from './ProductRow.js';
+import IngredientCategory from './IngredientCategory.js';
+import IngredientItem from './IngredientItem.js';
 
 class TableColumn extends Component {
   constructor (props) {
@@ -15,18 +15,18 @@ class TableColumn extends Component {
   render() {
     var rows = [];
     var column = this.props.category;
-    this.props.products.forEach((product) => {
-       if (product.name.toLowerCase().indexOf(this.props.filterText.toLowerCase()) === -1) {
+    this.props.ingredients.forEach((ingredient) => {
+       if (ingredient.name.toLowerCase().indexOf(this.props.filterText.toLowerCase()) === -1) {
         return;
       }
-       if (product.category === column) {
-        rows.push(<ProductRow onClassChange={this.passTarget} product={product} key={product.name} />);
+       if (ingredient.category === column) {
+        rows.push(<IngredientItem onClassChange={this.passTarget} ingredient={ingredient} key={ingredient.name} />);
       }
     });
     return (
       <table className='tableColumn'>
         <thead>
-          <ProductCategoryRow key={column +1} category={column} />
+          <IngredientCategory key={column +1} category={column} />
         </thead>
         <tbody>{rows}</tbody>
       </table>
