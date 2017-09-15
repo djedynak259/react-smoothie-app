@@ -5,7 +5,7 @@ import Recipe from './Recipe.js';
 import AddModalButton from './AddModalButton.js';
 import Table from './Table.js';
 
-class FilterableProductTable extends Component {
+class IngredientApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -55,6 +55,7 @@ class FilterableProductTable extends Component {
             onFilterTextInput={this.handleFilterTextInput}/>           
           <AddModalButton 
             products={this.state.products}
+            dispatch = {this.props.dispatch}
             addIngretient={this.handleAddIngredient}/>
         </div>
         <ActionText 
@@ -70,4 +71,4 @@ class FilterableProductTable extends Component {
   }
 }
 
-export default FilterableProductTable
+export default IngredientApp

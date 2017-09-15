@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
-import PRODUCTS from '../Data/PRODUCTS.js';
+import actions from '../Redux/actions.js';
 
 class AddModalButton extends Component {
   constructor(props) {
@@ -8,8 +8,7 @@ class AddModalButton extends Component {
       this.state = {
           visible : false,
           name: '',
-          category: '',
-          products: PRODUCTS
+          category: ''
       }
 
       this.handleChangeName = this.handleChangeName.bind(this); 
@@ -40,11 +39,8 @@ class AddModalButton extends Component {
   }
 
   handleSubmit(){
-    PRODUCTS.push({category:this.state.category, name:this.state.name})
+    this.props.dispatch(actions.addIngredient(this.state.name, this.state.category))
     
-    this.props.addIngretient()
-
-
     this.setState({
         visible : false,
         name:'',

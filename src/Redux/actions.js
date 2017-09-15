@@ -1,11 +1,21 @@
-export default actions = {
-	addIngredient(text){
+ let actions = {
+	addIngredient(name,category){
 		return {
 			type: 'ADD_INGREDIENT',
-			name: text.name,
-			category: text.category
+			name: name,
+			category: category
 		}
 	}
 }
 
-store.dispatch(addIngredient('text'))
+export default actions
+
+// Other Option
+
+// export const addIngredient = (name,category)=>{
+// 		return {
+// 			type: 'ADD_INGREDIENT',
+// 			name: name,
+// 			category: category
+// 		}
+// 	}

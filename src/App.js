@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import FilterableProductTable from './Components/FilterableProductTable.js';
+import IngredientApp from './Components/FilterableProductTable.js';
 import {connect} from 'react-redux';
 
 
@@ -10,7 +10,10 @@ class App extends Component {
       <div>
         <div className='background-image'></div>
         <div className="app">
-          <FilterableProductTable ingredients = {this.props.ingredients}/>
+          <IngredientApp 
+            ingredients={this.props.ingredients}
+            dispatch={this.props.dispatch}
+          />
         </div>
       </div>
     );

@@ -7,7 +7,7 @@ function getId(state){
 export default function reducer(state, action) {
 	switch (action.type) {
 		case 'ADD_INGREDIENT' :
-			Object.assign({}, state, {
+			return Object.assign({}, state, {
 				ingredients: [{
 					name: action.name,
 					category: action.category,
