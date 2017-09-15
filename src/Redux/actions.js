@@ -5,7 +5,22 @@
 			name: name,
 			category: category
 		}
+	},
+
+	chooseIngredient(id){
+		return {
+			type: 'CHOOSE_INGREDIENT',
+			id: id
+		}
+	},
+
+	deleteIngredient(id){
+		return {
+			type: 'DELETE_INGREDIENT',
+			id: id
+		}
 	}
+
 }
 
 export default actions

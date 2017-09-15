@@ -11,9 +11,21 @@ export default function reducer(state, action) {
 				ingredients: [{
 					name: action.name,
 					category: action.category,
+					selected: false,
 					id: getId(state)
 				}, ...state.ingredients],
 			})
+
+			case 'CHOOSE_INGREDIENT' :
+				return Object.assign({}, state, {
+					ingredients: state.ingredients.map(e=>{
+						return e.id === action.id ? {...e, selected: !e.selected} : e
+					})
+				})
+
+			case 'DELETE_INGREDIENT' :
+				return
+
 		default: return state;
 	}
 }
