@@ -1,6 +1,6 @@
 function getId(state){
 	return state.ingredients.reduce((maxId, curr) => {
-		return Math.max(curr.id, maxID)
+		return Math.max(curr.id, maxId)
 	}, -1) + 1;
 }
 
