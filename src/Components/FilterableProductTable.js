@@ -13,7 +13,7 @@ class FilterableProductTable extends Component {
       filterText: '',
       ingredient: 'Choose Ingredients',
       recipe: [],
-      products: PRODUCTS
+      products: this.props.products
     };
 
     this.passTarget = this.passTarget.bind(this);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import FilterableProductTable from './Components/FilterableProductTable.js';
-import PRODUCTS from './Data/PRODUCTS.js';
+import {connect} from 'react-redux';
 
 
 class App extends Component {
@@ -10,11 +10,15 @@ class App extends Component {
       <div>
         <div className='background-image'></div>
         <div className="app">
-          <FilterableProductTable products = {PRODUCTS}/>
+          <FilterableProductTable products = {this.props.ingredients}/>
         </div>
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state){
+  return state
+}
+
+export default connect(mapStateToProps)(App);

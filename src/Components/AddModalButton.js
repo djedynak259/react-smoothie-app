@@ -41,8 +41,10 @@ class AddModalButton extends Component {
 
   handleSubmit(){
     PRODUCTS.push({category:this.state.category, name:this.state.name})
+    
     this.props.addIngretient()
-    console.log(PRODUCTS)
+
+
     this.setState({
         visible : false,
         name:'',
