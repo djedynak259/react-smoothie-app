@@ -34,7 +34,11 @@ let initialState = {
 	  {category: 'Fats & Proteins', name: 'Chai Seeds', id:24, selected:false},
 	  {category: 'Fats & Proteins', name: 'Avocado', id:25, selected:false},
 	  {category: 'Fats & Proteins', name: 'Sprouts', id:26, selected:false}
-	]
+	],
+	users: {
+		username: 'dan',
+		id:7
+	}
 } 
 
 let store = configureStore(initialState)

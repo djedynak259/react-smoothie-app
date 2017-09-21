@@ -12,6 +12,7 @@ class App extends Component {
         <div className="app">
           <IngredientApp 
             ingredients={this.props.ingredients}
+            users={this.props.users}
             dispatch={this.props.dispatch}
           />
         </div>

@@ -4,6 +4,7 @@ import SearchBar from './SearchBar.js';
 import Recipe from './Recipe.js';
 import AddModalButton from './AddModalButton.js';
 import Table from './Table.js';
+import User from './User.js'
 
 class IngredientApp extends Component {
   constructor(props) {
@@ -42,6 +43,8 @@ class IngredientApp extends Component {
       <div className='content'>
         <div className="app-header">
           <h2>Smoothie Creator</h2>
+          <User dispatch={this.props.dispatch}
+                users={this.props.users}/>
           <SearchBar
             filterText={this.state.filterText}
             onFilterTextInput={this.handleFilterTextInput}/>           
