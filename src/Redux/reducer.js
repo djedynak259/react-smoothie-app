@@ -4,6 +4,7 @@ function getId(state){
 	}, -1) + 1;
 }
 
+
 export default function reducer(state, action) {
 	switch (action.type) {
 		case 'ADD_INGREDIENT' :
