@@ -24,7 +24,7 @@
 	createNewUser(){
 		return {
 			type: 'CREATE_USER',
-			id: Math.random().slice(0,2)*100
+			id: Math.round(Math.random()*100)
 		}
 	}
 

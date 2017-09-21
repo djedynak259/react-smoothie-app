@@ -29,8 +29,8 @@ export default function reducer(state, action) {
 
 			case 'CREATE_USER' :
 				return Object.assign({}, state, {
-					user:{
-						username: state.user.username,
+					users:{
+						username: state.users.username,
 						id: action.id
 					}
 				})
