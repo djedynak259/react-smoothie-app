@@ -19,7 +19,8 @@ export default function reducer(state, action) {
 			case 'CHOOSE_INGREDIENT' :
 				return Object.assign({}, state, {
 					ingredients: state.ingredients.map(e=>{
-						return e.id === action.id ? {...e, selected: !e.selected} : e
+						return e.id === action.id ? 
+							Object.assign({}, e, {selected: !e.selected}) : e
 					})
 				})
 
