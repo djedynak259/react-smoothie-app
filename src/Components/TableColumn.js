@@ -20,13 +20,20 @@ class TableColumn extends Component {
         return;
       }
        if (ingredient.category === column) {
-        rows.push(<IngredientItem onClassChange={this.passTarget} ingredient={ingredient} key={ingredient.name} />);
+        rows.push(<IngredientItem 
+                    dispatch = {this.props.dispatch}
+                    onClassChange={this.passTarget} 
+                    ingredient={ingredient} 
+                    key={ingredient.name} />);
       }
     });
     return (
       <table className='tableColumn'>
         <thead>
-          <IngredientCategory key={column +1} category={column} />
+          <IngredientCategory 
+            key={column +1} 
+            category={column}
+            />
         </thead>
         <tbody>{rows}</tbody>
       </table>

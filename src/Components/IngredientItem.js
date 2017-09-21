@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import actions from '../Redux/actions.js';
 
 class IngredientItem extends Component {
   constructor (props) {
@@ -8,6 +9,7 @@ class IngredientItem extends Component {
   }
 
   handleClassChange(e) {
+    this.props.dispatch(actions.chooseIngredient(this.props.ingredient.id))
     this.props.onClassChange(e.target.textContent)
     if (this.state.classN === 'tableRows'){
       this.setState({classN: 'tableRows highlight'})

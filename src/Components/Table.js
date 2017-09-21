@@ -21,6 +21,7 @@ class Table extends Component {
                                   category={ingredient.category} 
                                   key={ingredient.category}
                                   filterText={this.props.filterText} 
+                                  dispatch = {this.props.dispatch}
                                   />);
       }
       lastCategory = ingredient.category;

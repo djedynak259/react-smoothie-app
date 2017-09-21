@@ -53,6 +53,7 @@ class IngredientApp extends Component {
         <Recipe 
           recipe={this.state.recipe}/>  
         <Table 
+          dispatch = {this.props.dispatch}
           ingredients={this.props.ingredients} 
           filterText={this.state.filterText}
           passTarget={this.passTarget}/>
