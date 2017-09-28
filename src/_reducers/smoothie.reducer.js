@@ -4,7 +4,7 @@ function getId(state){
 	}, -1) + 1;
 }
 
-export default function reducer(state, action) {
+export default function ingredients(state = {}, action) {
 	switch (action.type) {
 		case 'ADD_INGREDIENT' :
 			return Object.assign({}, state, {

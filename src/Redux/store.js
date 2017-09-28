@@ -1,11 +1,11 @@
 import { applyMiddleware, compose, createStore } from 'redux';
-import reducer from './reducer'
-import {createLogger} from 'redux-logger'
+import {createLogger} from 'redux-logger';
+import ingredients from '../_reducers/smoothie.reducer.js'
 
 let finalCreateStore = compose(
 		applyMiddleware(createLogger())
 )(createStore)
 
 export default function configureStore (initialState = { ingredients: [] }) {
-	return finalCreateStore(reducer, initialState)
+	return finalCreateStore(ingredients, initialState)
 }

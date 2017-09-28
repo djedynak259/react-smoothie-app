@@ -1,4 +1,4 @@
- let actions = {
+ const actions = {
 	addIngredient(name,category){
 		return {
 			type: 'ADD_INGREDIENT',
