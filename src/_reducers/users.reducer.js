@@ -9,6 +9,7 @@ let init = {
 
 export function users(state = init, action) {
   switch (action.type) {
+    
     case 'CREATE_USER' :
       return {
         items: [...state, {
@@ -16,7 +17,6 @@ export function users(state = init, action) {
           id: action.id
         }]
       }
-
     case userConstants.GETALL_REQUEST:
       return {
         loading: true
