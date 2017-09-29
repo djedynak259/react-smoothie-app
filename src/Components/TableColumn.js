@@ -42,14 +42,13 @@ class TableColumn extends Component {
   }
 }
 
-// function mapStateToProps(state) {
-//     const { ingredients } = state.ingredients;
-//     return {
-//         ingredients
-//     };
-// }
+function mapStateToProps(state) {
+    const { ingredients, filter } = state;
+    return {
+        ingredients,
+        filter
+    };
+}
  
-// const connectedRegisterPage = connect(mapStateToProps)(TableColumn);
-// export { connectedRegisterPage as TableColumn };
-
-export { TableColumn }
+const connectedRegisterPage = connect(mapStateToProps)(TableColumn);
+export { connectedRegisterPage as TableColumn };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {NewSelection} from './ActionText.js';
-import SearchBar from './SearchBar.js';
+import {SearchBar} from './SearchBar.js';
 import {Recipe} from './Recipe.js';
 import {AddModalButton} from './AddModalButton.js';
 import {Table} from './Table.js';

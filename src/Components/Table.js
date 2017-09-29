@@ -18,11 +18,9 @@ class Table extends Component {
     this.props.ingredients.forEach((ingredient) => {
       if (ingredient.category !== lastCategory) {
         columns.push(<TableColumn passTarget={this.passTarget} 
-                                  ingredients={this.props.ingredients} 
                                   category={ingredient.category} 
                                   key={ingredient.category}
                                   filterText={this.props.filterText} 
-                                  dispatch = {this.props.dispatch}
                                   />);
       }
       lastCategory = ingredient.category;

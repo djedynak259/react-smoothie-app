@@ -24,13 +24,3 @@
 }
 
 export { ingredientActions }
-
-// Other Option
-
-// export const addIngredient = (name,category)=>{
-// 		return {
-// 			type: 'ADD_INGREDIENT',
-// 			name: name,
-// 			category: category
-// 		}
-// 	}

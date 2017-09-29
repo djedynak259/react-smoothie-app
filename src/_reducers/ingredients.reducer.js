@@ -35,6 +35,7 @@ const init = [
 
 export function ingredients(state = init, action) {
 	switch (action.type) {
+
 		case 'ADD_INGREDIENT' :
 			return [...state, {
 					name: action.name,

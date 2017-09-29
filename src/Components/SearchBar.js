@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -24,4 +25,12 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar
+function mapStateToProps(state) {
+    const { ingredients } = state;
+    return {
+        ingredients
+    };
+}
+ 
+const connectedRegisterPage = connect(mapStateToProps)(SearchBar);
+export { connectedRegisterPage as SearchBar };
