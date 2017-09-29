@@ -1,5 +1,5 @@
 function getId(state){
-	return state.ingredients.reduce((maxId, curr) => {
+	return state.reduce((maxId, curr) => {
 		return Math.max(curr.id, maxId)
 	}, -1) + 1;
 }
@@ -40,7 +40,7 @@ export function ingredients(state = init, action) {
 					name: action.name,
 					category: action.category,
 					selected: false,
-					id: 'test'
+					id: getId(state)
 				}]
 			
 // Fix id not as test

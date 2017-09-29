@@ -4,7 +4,7 @@ import { authentication } from './authentication.reducer';
 import { registration } from './registration.reducer';
 import { users } from './users.reducer';
 import { alert } from './alert.reducer';
-import { ingredients } from './smoothie.reducer';
+import { ingredients } from './ingredients.reducer';
 
 const rootReducer = combineReducers({
   authentication,

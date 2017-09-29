@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import actions from '../Redux/actions.js';
+import {actions} from '../_actions';
 
 class IngredientItem extends Component {
   constructor (props) {

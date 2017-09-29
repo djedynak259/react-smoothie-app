@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import {IngredientApp} from './Components/IngredientApp.js';
 import {connect} from 'react-redux';
+import { Router, Route } from 'react-router-dom';
 
 
 class App extends Component {

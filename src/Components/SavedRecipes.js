@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
-import actions from '../Redux/actions.js';
+import {actions} from '../_actions';
 
 class SavedRecipes extends Component {
   constructor (props) {
