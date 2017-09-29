@@ -11,19 +11,19 @@ class App extends Component {
       <div>
         <div className='background-image'></div>
         <div className="app">
-          <IngredientApp 
-            users={this.props.users}
-            dispatch={this.props.dispatch}
-          />
+          <IngredientApp/>
         </div>
       </div>
     );
   }
 }
 
-function mapStateToProps(state){
-  return state
-}
+// add login page here and routes
 
-const connectedApp = connect(mapStateToProps)(App);
-export { connectedApp as App }; 
+// function mapStateToProps(state){
+//   return state
+// }
+
+// const connectedApp = connect(mapStateToProps)(App);
+
+export { App }; 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {userActions} from '../_actions';
+import { connect } from 'react-redux';
 
 class User extends Component {
   constructor (props) {
@@ -22,4 +23,12 @@ class User extends Component {
   }
 }
 
-export default User
+function mapStateToProps(state) {
+    const { users } = state;
+    return {
+        users
+    };
+}
+ 
+const connectedRegisterPage = connect(mapStateToProps)(User);
+export { connectedRegisterPage as User };

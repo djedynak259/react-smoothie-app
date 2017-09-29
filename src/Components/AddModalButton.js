@@ -83,7 +83,7 @@ class AddModalButton extends Component {
 }
 
 function mapStateToProps(state) {
-    const { ingredients } = state.ingredients;
+    const { ingredients } = state;
     return {
         ingredients
     };

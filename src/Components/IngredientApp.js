@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import ActionText from './ActionText.js';
+import {NewSelection} from './ActionText.js';
 import SearchBar from './SearchBar.js';
-import Recipe from './Recipe.js';
+import {Recipe} from './Recipe.js';
 import {AddModalButton} from './AddModalButton.js';
 import {Table} from './Table.js';
-import User from './User.js';
+import {User} from './User.js';
 import SavedRecipes from './SavedRecipes.js'
 import { connect } from 'react-redux';
 
@@ -22,15 +22,8 @@ class IngredientApp extends Component {
   }
 
   passTarget(e) {
-    let recipeArr = this.state.recipe;
-    if(recipeArr.includes(e)){
-      recipeArr.splice(recipeArr.indexOf(e),1)
-    } else {
-      recipeArr.push(e)
-    }
     this.setState({
-      ingredient: `Yumm, ${e}!`,
-      recipe: recipeArr
+      ingredient: `Yumm, ${e}!`
     })
   }
 
@@ -45,21 +38,16 @@ class IngredientApp extends Component {
       <div className='content'>
         <div className="app-header">
           <h2>Smoothie Creator</h2>
-          <User dispatch={this.props.dispatch}
-                users={this.props.users}/>
+          <User/>
           <SavedRecipes/>
           <SearchBar
             filterText={this.state.filterText}
             onFilterTextInput={this.handleFilterTextInput}/>           
-          <AddModalButton 
-            dispatch = {this.props.dispatch}/>
+          <AddModalButton/>
         </div>
-        <ActionText 
-          ingredient={this.state.ingredient}/>    
-        <Recipe 
-          recipe={this.state.recipe}/>  
+        <NewSelection ingredient = {this.state.ingredient}/>    
+        <Recipe/>  
         <Table 
-          dispatch = {this.props.dispatch}
           filterText={this.state.filterText}
           passTarget={this.passTarget}/>
       </div> 
