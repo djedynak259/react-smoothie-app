@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
-import {ingredientActions} from '../_actions';
+import { ingredientActions } from '../_actions';
 import { connect } from 'react-redux';
 
 class AddModalButton extends Component {
@@ -40,7 +40,7 @@ class AddModalButton extends Component {
   }
 
   handleSubmit(){
-    this.props.dispatch(actions.addIngredient(this.state.name, this.state.category))
+    this.props.dispatch(ingredientActions.addIngredient(this.state.name, this.state.category))
     this.setState({
         visible : false,
         name:'',

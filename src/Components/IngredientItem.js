@@ -9,7 +9,7 @@ class IngredientItem extends Component {
   }
 
   handleClassChange(e) {
-    this.props.dispatch(actions.chooseIngredient(this.props.ingredient.id))
+    this.props.dispatch(ingredientActions.chooseIngredient(this.props.ingredient.id))
     this.props.onClassChange(e.target.textContent)
     if (this.state.classN === 'tableRows'){
       this.setState({classN: 'tableRows highlight'})
