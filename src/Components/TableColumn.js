@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IngredientCategory from './IngredientCategory.js';
 import IngredientItem from './IngredientItem.js';
+import { connect } from 'react-redux';
 
 class TableColumn extends Component {
   constructor (props) {
@@ -41,4 +42,14 @@ class TableColumn extends Component {
   }
 }
 
-export default TableColumn
+// function mapStateToProps(state) {
+//     const { ingredients } = state.ingredients;
+//     return {
+//         ingredients
+//     };
+// }
+ 
+// const connectedRegisterPage = connect(mapStateToProps)(TableColumn);
+// export { connectedRegisterPage as TableColumn };
+
+export { TableColumn }

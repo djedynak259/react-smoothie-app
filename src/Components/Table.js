@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TableColumn from './TableColumn.js';
+import { TableColumn } from './TableColumn.js';
 
 class Table extends Component {
   constructor(props) {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import actions from '../Redux/actions.js';
+import { connect } from 'react-redux';
 
 class AddModalButton extends Component {
   constructor(props) {
@@ -81,6 +82,16 @@ class AddModalButton extends Component {
   }
 }
 
+function mapStateToProps(state) {
+    const { ingredients } = state.ingredients;
+    return {
+        ingredients
+    };
+}
+ 
+const connectedRegisterPage = connect(mapStateToProps)(AddModalButton);
+export { connectedRegisterPage as AddModalButton };
+
 // class Examples extends Component {
 //     constructor(props) {
 //         super(props);
@@ -124,4 +135,4 @@ class AddModalButton extends Component {
 //     }
 // }
 
-export default AddModalButton
+// export default AddModalButton
