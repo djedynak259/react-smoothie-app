@@ -6,13 +6,6 @@ import {Provider} from 'react-redux'
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
-let initialState = {
-	users: {
-		username: 'dan',
-		id:7
-	}
-} 
-
 ReactDOM.render(
 	<Provider store={store}>
 		<App />

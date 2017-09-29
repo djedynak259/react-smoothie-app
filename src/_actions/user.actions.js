@@ -8,8 +8,16 @@ export const userActions = {
     logout,
     register,
     getAll,
+    createNewUser,
     delete: _delete
 };
+
+function createNewUser(){
+    return {
+        type: 'CREATE_USER',
+        id: Math.round(Math.random()*100)
+    }
+}
 
 function login(username, password) {
     return dispatch => {

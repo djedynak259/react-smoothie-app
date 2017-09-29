@@ -1,7 +1,22 @@
 import { userConstants } from '../_constants';
 
-export function users(state = {}, action) {
+let init = {
+  items: [{
+    username: 'dan',
+    id:7
+  }
+]}
+
+export function users(state = init, action) {
   switch (action.type) {
+    case 'CREATE_USER' :
+      return {
+        items: [...state, {
+          username: state.items[0].username,
+          id: action.id
+        }]
+      }
+
     case userConstants.GETALL_REQUEST:
       return {
         loading: true

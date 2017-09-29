@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ingredientActions} from '../_actions';
+import {userActions} from '../_actions';
 
 class User extends Component {
   constructor (props) {
@@ -9,7 +9,7 @@ class User extends Component {
   }
 
   handleNewUser() {
-    this.props.dispatch(ingredientActions.createNewUser())
+    this.props.dispatch(userActions.createNewUser())
   }
 
   render() {

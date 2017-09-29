@@ -42,8 +42,6 @@ export function ingredients(state = init, action) {
 					selected: false,
 					id: getId(state)
 				}]
-			
-// Fix id not as test
 
 		case 'CHOOSE_INGREDIENT' :
 			return state.map(e=>{
@@ -53,14 +51,6 @@ export function ingredients(state = init, action) {
 
 		case 'DELETE_INGREDIENT' :
 			return
-
-		case 'CREATE_USER' :
-			return Object.assign({}, state, {
-				users:{
-					username: state.users.username,
-					id: action.id
-				}
-			})
 
 		default: return state;
 	}

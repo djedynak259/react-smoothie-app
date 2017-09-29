@@ -19,13 +19,6 @@
 			type: 'DELETE_INGREDIENT',
 			id: id
 		}
-	},
-
-	createNewUser(){
-		return {
-			type: 'CREATE_USER',
-			id: Math.round(Math.random()*100)
-		}
 	}
 
 }
