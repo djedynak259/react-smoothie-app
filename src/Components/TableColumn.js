@@ -43,10 +43,11 @@ class TableColumn extends Component {
 }
 
 function mapStateToProps(state) {
-    const { ingredients, filter } = state;
+    const { ingredients } = state;
+    const {filterText} = state.filter
     return {
         ingredients,
-        filter
+        filterText
     };
 }
  

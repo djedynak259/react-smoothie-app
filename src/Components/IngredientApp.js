@@ -48,7 +48,6 @@ class IngredientApp extends Component {
         <NewSelection ingredient = {this.state.ingredient}/>    
         <Recipe/>  
         <Table 
-          filterText={this.state.filterText}
           passTarget={this.passTarget}/>
       </div> 
     );
