@@ -25,4 +25,5 @@ function mapStateToProps(state){
   return state
 }
 
-export default connect(mapStateToProps)(App);
+const connectedApp = connect(mapStateToProps)(App);
+export { connectedApp as App }; 
