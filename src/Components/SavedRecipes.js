@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
-import {actions} from '../_actions';
+import {ingredientActions} from '../_actions';
 
 class SavedRecipes extends Component {
   constructor (props) {

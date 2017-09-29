@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
-import {actions} from '../_actions';
+import {ingredientActions} from '../_actions';
 import { connect } from 'react-redux';
 
 class AddModalButton extends Component {

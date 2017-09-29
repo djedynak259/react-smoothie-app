@@ -1,4 +1,4 @@
- const actions = {
+ const ingredientActions = {
 	addIngredient(name,category){
 		return {
 			type: 'ADD_INGREDIENT',
@@ -30,7 +30,7 @@
 
 }
 
-export { actions }
+export { ingredientActions }
 
 // Other Option
 

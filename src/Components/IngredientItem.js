@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {actions} from '../_actions';
+import {ingredientActions} from '../_actions';
 
 class IngredientItem extends Component {
   constructor (props) {
