@@ -4,7 +4,7 @@ function getId(state){
 	}, -1) + 1;
 }
 
-export default function ingredients(state = {}, action) {
+export function ingredients(state = {}, action) {
 	switch (action.type) {
 		case 'ADD_INGREDIENT' :
 			return Object.assign({}, state, {
@@ -12,7 +12,7 @@ export default function ingredients(state = {}, action) {
 					name: action.name,
 					category: action.category,
 					selected: false,
-					id: getId(state)
+					id: 'test'
 				}, ...state.ingredients],
 			})
 
