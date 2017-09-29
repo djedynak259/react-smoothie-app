@@ -3,9 +3,10 @@ import ActionText from './ActionText.js';
 import SearchBar from './SearchBar.js';
 import Recipe from './Recipe.js';
 import {AddModalButton} from './AddModalButton.js';
-import Table from './Table.js';
+import {Table} from './Table.js';
 import User from './User.js';
 import SavedRecipes from './SavedRecipes.js'
+import { connect } from 'react-redux';
 
 class IngredientApp extends Component {
   constructor(props) {
@@ -59,7 +60,6 @@ class IngredientApp extends Component {
           recipe={this.state.recipe}/>  
         <Table 
           dispatch = {this.props.dispatch}
-          ingredients={this.props.ingredients} 
           filterText={this.state.filterText}
           passTarget={this.passTarget}/>
       </div> 
@@ -67,4 +67,12 @@ class IngredientApp extends Component {
   }
 }
 
-export default IngredientApp
+function mapStateToProps(state) {
+    const { ingredients } = state;
+    return {
+        ingredients
+    };
+}
+ 
+const connectedRegisterPage = connect(mapStateToProps)(IngredientApp);
+export { connectedRegisterPage as IngredientApp };

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TableColumn } from './TableColumn.js';
+import { connect } from 'react-redux';
 
 class Table extends Component {
   constructor(props) {
@@ -35,4 +36,15 @@ class Table extends Component {
   }
 }
 
-export default Table
+
+function mapStateToProps(state) {
+    const { ingredients } = state
+    return {
+        ingredients
+    };
+}
+ 
+const connectedRegisterPage = connect(mapStateToProps)(Table);
+export { connectedRegisterPage as Table };
+
+// export {Table}
