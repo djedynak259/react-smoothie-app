@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { filterActions } from '../_actions';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class SearchBar extends Component {
   }
   
   handleFilterTextInputChange(e) {
-    this.props.onFilterTextInput(e.target.value);
+    this.props.dispatch(filterActions.filterText(this.props.filterText))
   }
   
   render() {
@@ -27,8 +28,10 @@ class SearchBar extends Component {
 
 function mapStateToProps(state) {
     const { ingredients } = state;
+    const {filterText} = state.filter
     return {
-        ingredients
+        ingredients,
+        filterText
     };
 }
  

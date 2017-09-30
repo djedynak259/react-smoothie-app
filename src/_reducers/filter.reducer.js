@@ -6,7 +6,7 @@ export function filter(state = init, action) {
   switch (action.type) {
     case 'FILTER_INGREDIENTS' :
       return {
-        filterText: action.text
+        filterText: action.filterText
       }
     default:
       return state

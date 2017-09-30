@@ -41,7 +41,6 @@ class IngredientApp extends Component {
           <User/>
           <SavedRecipes/>
           <SearchBar
-            filterText={this.state.filterText}
             onFilterTextInput={this.handleFilterTextInput}/>           
           <AddModalButton/>
         </div>

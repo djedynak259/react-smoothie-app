@@ -2,7 +2,8 @@
 
 	filterText(e) {
 		return {
-			type: 'FILTER_INGREDIENTS'
+			type: 'FILTER_INGREDIENTS',
+			filterText: e
 		}
 	}
 
