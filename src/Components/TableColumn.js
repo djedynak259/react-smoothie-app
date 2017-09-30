@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import IngredientCategory from './IngredientCategory.js';
-import IngredientItem from './IngredientItem.js';
+import {IngredientItem} from './IngredientItem.js';
 import { connect } from 'react-redux';
 
 class TableColumn extends Component {

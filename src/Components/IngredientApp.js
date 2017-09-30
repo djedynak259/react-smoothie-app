@@ -18,19 +18,12 @@ class IngredientApp extends Component {
     };
 
     this.passTarget = this.passTarget.bind(this);
-    this.handleFilterTextInput = this.handleFilterTextInput.bind(this);
   }
 
   passTarget(e) {
     this.setState({
       ingredient: `Yumm, ${e}!`
     })
-  }
-
-  handleFilterTextInput(filterText) {
-    this.setState({
-      filterText: filterText
-    });
   }
 
   render() {
@@ -40,8 +33,7 @@ class IngredientApp extends Component {
           <h2>Smoothie Creator</h2>
           <User/>
           <SavedRecipes/>
-          <SearchBar
-            onFilterTextInput={this.handleFilterTextInput}/>           
+          <SearchBar/>           
           <AddModalButton/>
         </div>
         <NewSelection ingredient = {this.state.ingredient}/>    

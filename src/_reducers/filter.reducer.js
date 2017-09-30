@@ -1,5 +1,6 @@
 let init = {
-  filterText: ''
+  filterText: '',
+  recentSelection: null
 }
 
 export function filter(state = init, action) {
@@ -8,6 +9,10 @@ export function filter(state = init, action) {
       return {
         filterText: action.filterText
       }
+    case 'RECENT_SELECTION' :
+      return {
+        recentSelection: action.id
+      }      
     default:
       return state
   }

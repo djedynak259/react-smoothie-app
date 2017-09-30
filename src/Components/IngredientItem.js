@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {ingredientActions} from '../_actions';
+import { filterActions } from '../_actions';
 
 class IngredientItem extends Component {
   constructor (props) {
@@ -9,6 +10,7 @@ class IngredientItem extends Component {
   }
 
   handleClassChange(e) {
+    this.props.dispatch(filterActions.recentSelection(this.props.ingredient.id))
     this.props.dispatch(ingredientActions.chooseIngredient(this.props.ingredient.id))
     this.props.onClassChange(e.target.textContent)
     if (this.state.classN === 'tableRows'){
@@ -29,4 +31,4 @@ class IngredientItem extends Component {
   }
 }
 
-export default IngredientItem
+export  {IngredientItem}
