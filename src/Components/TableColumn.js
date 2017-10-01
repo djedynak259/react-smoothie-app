@@ -4,14 +4,6 @@ import {IngredientItem} from './IngredientItem.js';
 import { connect } from 'react-redux';
 
 class TableColumn extends Component {
-  constructor (props) {
-    super(props);
-    this.passTarget = this.passTarget.bind(this);
-  }
-
-  passTarget(e) {
-    this.props.passTarget(e)
-  }
 
   render() {
     var rows = [];
@@ -22,8 +14,6 @@ class TableColumn extends Component {
       }
        if (ingredient.category === column) {
         rows.push(<IngredientItem 
-                    dispatch = {this.props.dispatch}
-                    onClassChange={this.passTarget} 
                     ingredient={ingredient} 
                     key={ingredient.name} />);
       }

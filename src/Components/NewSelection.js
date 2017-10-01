@@ -5,16 +5,16 @@ class NewSelection extends Component {
   render () {
     return (
       <div className='actionText'>
-        <p>{this.props.ingredient}</p>
+        <p>{this.props.recentSelection}</p>
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-    const { ingredients } = state;
+    const { recentSelection } = state.filter;
     return {
-        ingredients
+        recentSelection
     };
 }
 

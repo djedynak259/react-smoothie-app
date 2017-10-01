@@ -7,10 +7,10 @@
 		}
 	},
 
-	recentSelection(id) {
+	recentSelection(name) {
 		return {
 			type: 'RECENT_SELECTION',
-			id: id
+			name: name
 		}
 	}	
 

@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import {ingredientActions} from '../_actions';
 import { filterActions } from '../_actions';
+import { connect } from 'react-redux';
 
 class IngredientItem extends Component {
   constructor (props) {
     super(props);
-    this.handleClassChange = this.handleClassChange.bind(this);
     this.state = {classN: 'tableRows'}
+    
+    this.handleClassChange = this.handleClassChange.bind(this);
   }
 
   handleClassChange(e) {
-    this.props.dispatch(filterActions.recentSelection(this.props.ingredient.id))
+    this.props.dispatch(filterActions.recentSelection(this.props.ingredient.name))
     this.props.dispatch(ingredientActions.chooseIngredient(this.props.ingredient.id))
-    this.props.onClassChange(e.target.textContent)
+
     if (this.state.classN === 'tableRows'){
       this.setState({classN: 'tableRows highlight'})
     } else {
@@ -31,4 +33,9 @@ class IngredientItem extends Component {
   }
 }
 
-export  {IngredientItem}
+function mapStateToProps(state) {
+  return {};
+}
+
+const connectedRegisterPage = connect(mapStateToProps)(IngredientItem);
+export { connectedRegisterPage as IngredientItem };

@@ -1,18 +1,15 @@
 let init = {
   filterText: '',
-  recentSelection: null
+  recentSelection: 'Select Ingredient'
 }
 
 export function filter(state = init, action) {
   switch (action.type) {
     case 'FILTER_INGREDIENTS' :
-      return {
-        filterText: action.filterText
-      }
+      return Object.assign({}, state, {filterText: action.filterText})
     case 'RECENT_SELECTION' :
-      return {
-        recentSelection: action.id
-      }      
+      return Object.assign({}, state, {recentSelection: action.name})
+        recentSelection: action.id      
     default:
       return state
   }
