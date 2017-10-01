@@ -20,16 +20,14 @@ class SavedRecipes extends Component {
   closeModal() {
       this.setState({
           visible : false,
-          name:'',
-          category:''
+          name:''
       });
   }  
 
   render() {
      return (
       <div>
-        <input className='button' type="button" value="Save Recipe" onClick={() => this.openModal()}/>
-        <input className='button' type="button" value="Save Recipe" onClick={() => this.openModal()}/>        
+        <input className='button' type="button" value="Save Recipe" onClick={() => this.openModal()}/>    
         <Modal 
           visible={this.state.visible}
           width="360"
