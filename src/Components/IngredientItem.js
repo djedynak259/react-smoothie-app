@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 class IngredientItem extends Component {
   constructor (props) {
     super(props);
-    
     this.handleClassChange = this.handleClassChange.bind(this);
   }
 
@@ -18,7 +17,8 @@ class IngredientItem extends Component {
   render() {
      return (
       <tr>
-        <td className={this.props.ingredient.selected ? 'tableRows highlight' : 'tableRows'} onClick={this.handleClassChange}>
+        <td className={this.props.ingredient.selected ? 'tableRows highlight' : 'tableRows'} 
+            onClick={this.handleClassChange}>
           {this.props.ingredient.name}
         </td>
       </tr>
@@ -27,8 +27,7 @@ class IngredientItem extends Component {
 }
 
 function mapStateToProps(state) {
-  const {ingredients} = state
-  return {ingredients};
+  return {};
 }
 
 const connectedRegisterPage = connect(mapStateToProps)(IngredientItem);
