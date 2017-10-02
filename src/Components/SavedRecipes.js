@@ -11,7 +11,7 @@ class SavedRecipes extends Component {
     this.state = {
         visible : false,
         name: '',
-        items:''
+        recipes:[]
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleRecipeName = this.handleRecipeName.bind(this)
@@ -36,14 +36,23 @@ class SavedRecipes extends Component {
 
 // Testing firebase
 
-  componentDidMount () {
-    var ref = firebase.database().ref().child('react').child('test1');
-    ref.on('value', snap =>{
+  componentWillMount () {
+    let items = []
+
+    this.firebaseRef = firebase.database().ref().child('react').child('SavedRecipes');
+    this.firebaseRef.on('value', snap =>{
       this.setState({
-        items:snap.val()
+        recipes:snap.val()
       })
     })
-    console.log(ref)
+
+    this.firebaseRef.on("child_added", function(dataSnapshot) {
+      items.push(dataSnapshot.val());
+      this.setState({
+        recipes: items
+      });
+    }.bind(this));
+
   }
 
 
@@ -51,13 +60,22 @@ class SavedRecipes extends Component {
     let savedRecipe = this.props.ingredients.filter(e=>{
       return e.selected
     }).map(f=>{return f.id})
+    console.log(savedRecipe)
 
-    this.props.dispatch(ingredientActions.addIngredient(this.state.name, this.state.category))
+    this.firebaseRef.push({
+      name: this.state.name,
+      ingredients: savedRecipe
+    });
     
     this.setState({
         visible : false,
         name:''
     });
+
+  }  
+
+  componentWillUnmount () {
+    this.firebaseRef.off();
   }  
 
   render() {
