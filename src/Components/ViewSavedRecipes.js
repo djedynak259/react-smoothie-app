@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
-import { ingredientActions } from '../_actions';
 import { connect } from 'react-redux';
 import {firebase} from '../_helpers';
 
-class SavedRecipes extends Component {
-  mixins: [ReactFireMixin]
+class ViewSavedRecipes extends Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -57,20 +55,27 @@ class SavedRecipes extends Component {
 
 
   handleSubmit(){
-    let savedRecipe = this.props.ingredients.filter(e=>{
-      return e.selected
-    }).map(f=>{return f.id})
-    console.log(savedRecipe)
 
-    this.firebaseRef.push({
-      name: this.state.name,
-      ingredients: savedRecipe
-    });
+    // let savedRecipe = this.props.ingredients.filter(e=>{
+    //   return e.selected
+    // }).map(f=>{return f.id})
+    // console.log(savedRecipe)
+
+    // if(this.state.name.length === 0 ||savedRecipe.length === 0){
+
+    //   // add validation popup
+    //   return
+    // }
+
+    // this.firebaseRef.push({
+    //   name: this.state.name,
+    //   ingredients: savedRecipe
+    // });
     
-    this.setState({
-        visible : false,
-        name:''
-    });
+    // this.setState({
+    //     visible : false,
+    //     name:''
+    // });
 
   }  
 
@@ -79,9 +84,21 @@ class SavedRecipes extends Component {
   }  
 
   render() {
+    let recipeList = []
+
+   this.firebaseRef.on('value', function(snapshot){
+    snapshot.forEach(function(child){
+        var value = child.val();
+        recipeList.push({name: value.name})
+    });
+
+    console.log(recipeList)
+});
+
+
      return (
       <div>
-        <input className='button' type="button" value="Save Recipe" onClick={() => this.openModal()}/>    
+        <input className='button' type="button" value="View Savex Recipes" onClick={() => this.openModal()}/>    
         <Modal 
           visible={this.state.visible}
           width="360"
@@ -89,14 +106,9 @@ class SavedRecipes extends Component {
           effect="fadeInUp"
           onClickAway={() => this.closeModal()}>
           <div className='modalWrapper'>
-            <h1>New Recipe</h1>
-            <p>Enter Name of New Recipe</p>
-            <input
-              className='searchInput addModal'
-              type="text"
-              placeholder="Name"
-              value={this.state.name}
-              onChange={this.handleRecipeName}/>  
+            <h1>ViewRecipes</h1>
+            <ul>{recipeList}</ul>
+      
             <input className='addModalAdd button'type="button" value="Submit" onClick={this.handleSubmit}/>
             <input className='addModalClose button' type="button" value="Close" onClick={() => this.closeModal()} />
           </div>   
@@ -111,5 +123,5 @@ function mapStateToProps(state) {
   return {ingredients};
 }
 
-const connectedRegisterPage = connect(mapStateToProps)(SavedRecipes);
-export { connectedRegisterPage as SavedRecipes };
+const connectedRegisterPage = connect(mapStateToProps)(ViewSavedRecipes);
+export { connectedRegisterPage as ViewSavedRecipes };

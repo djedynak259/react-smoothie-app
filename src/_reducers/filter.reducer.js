@@ -9,7 +9,6 @@ export function filter(state = init, action) {
       return Object.assign({}, state, {filterText: action.filterText})
     case 'RECENT_SELECTION' :
       return Object.assign({}, state, {recentSelection: action.name})
-        recentSelection: action.id      
     default:
       return state
   }

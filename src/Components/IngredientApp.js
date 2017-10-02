@@ -5,7 +5,8 @@ import {Recipe} from './Recipe.js';
 import {AddModalButton} from './AddModalButton.js';
 import {Table} from './Table.js';
 import {User} from './User.js';
-import {SavedRecipes} from './SavedRecipes.js'
+import {SaveNewRecipe} from './SaveNewRecipe.js'
+import {ViewSavedRecipes} from './ViewSavedRecipes.js'
 import { connect } from 'react-redux';
 
 class IngredientApp extends Component {
@@ -16,7 +17,8 @@ class IngredientApp extends Component {
         <div className="app-header">
           <h2>Smoothie Creator</h2>
           <User/>
-          <SavedRecipes/>
+          <SaveNewRecipe/>
+          <ViewSavedRecipes/>
           <SearchBar/>           
           <AddModalButton/>
         </div>
