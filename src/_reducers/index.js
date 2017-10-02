@@ -6,6 +6,7 @@ import { users } from './users.reducer';
 import { alert } from './alert.reducer';
 import { ingredients } from './ingredients.reducer';
 import { filter } from './filter.reducer';
+import { recipes } from './recipe.reducer';
 
 const rootReducer = combineReducers({
   authentication,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   users,
   alert,
   ingredients,
-  filter
+  filter,
+  recipes
 });
 
 export default rootReducer;

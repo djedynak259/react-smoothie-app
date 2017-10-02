@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import { connect } from 'react-redux';
 import {firebase} from '../_helpers';
+import { recipeActions } from '../_actions';
 
 class SaveNewRecipe extends Component {
   constructor (props) {
     super(props);
     this.state = {
         visible : false,
-        name: '',
-        recipes:[]
+        name: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleRecipeName = this.handleRecipeName.bind(this)
@@ -38,12 +38,9 @@ class SaveNewRecipe extends Component {
     let items = []
 
     this.firebaseRef = firebase.database().ref().child('react').child('SavedRecipes');
-    this.firebaseRef = firebase.database().ref().child('react').child('SavedRecipes');
     this.firebaseRef.on("child_added", snap => {
       items.push(snap.val());
-      this.setState({
-        recipes: items
-      });
+      this.props.dispatch(recipeActions.saveRecipe(items))
     });
   }
 
@@ -105,8 +102,8 @@ class SaveNewRecipe extends Component {
 }
 
 function mapStateToProps(state) {
-  const {ingredients} = state
-  return {ingredients};
+  const {recipes, ingredients} = state
+  return {recipes, ingredients};
 }
 
 const connectedRegisterPage = connect(mapStateToProps)(SaveNewRecipe);
