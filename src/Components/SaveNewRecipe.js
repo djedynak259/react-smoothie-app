@@ -32,27 +32,20 @@ class SaveNewRecipe extends Component {
     this.setState({name: event.target.value});
   }
 
-// Testing firebase
+// firebase
 
   componentWillMount () {
     let items = []
 
     this.firebaseRef = firebase.database().ref().child('react').child('SavedRecipes');
-    this.firebaseRef.on('value', snap =>{
-      this.setState({
-        recipes:snap.val()
-      })
-    })
-
-    this.firebaseRef.on("child_added", function(dataSnapshot) {
-      items.push(dataSnapshot.val());
+    this.firebaseRef = firebase.database().ref().child('react').child('SavedRecipes');
+    this.firebaseRef.on("child_added", snap => {
+      items.push(snap.val());
       this.setState({
         recipes: items
       });
-    }.bind(this));
-
+    });
   }
-
 
   handleSubmit(){
 

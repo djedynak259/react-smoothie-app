@@ -38,18 +38,12 @@ class ViewSavedRecipes extends Component {
     let items = []
 
     this.firebaseRef = firebase.database().ref().child('react').child('SavedRecipes');
-    this.firebaseRef.on('value', snap =>{
-      this.setState({
-        recipes:snap.val()
-      })
-    })
-
-    this.firebaseRef.on("child_added", function(dataSnapshot) {
-      items.push(dataSnapshot.val());
+    this.firebaseRef.on("child_added", snap => {
+      items.push(snap.val());
       this.setState({
         recipes: items
       });
-    }.bind(this));
+    });
 
   }
 
@@ -84,21 +78,16 @@ class ViewSavedRecipes extends Component {
   }  
 
   render() {
+    
     let recipeList = []
 
-   this.firebaseRef.on('value', function(snapshot){
-    snapshot.forEach(function(child){
-        var value = child.val();
+    this.state.recipes.forEach(f => {
         let ingredientList = '';
-        value.ingredients.forEach(e=>{
+        f.ingredients.forEach(e=>{
           ingredientList+=`${e.name} `
         })
-        recipeList.push(<div><p>{value.name}</p><p>{ingredientList}</p></div>)
+        recipeList.push(<div><p>{f.name}</p><p>{ingredientList}</p></div>)
     });
-
-    console.log(recipeList)
-});
-
 
      return (
       <div>
