@@ -5,7 +5,7 @@ import {Recipe} from './Recipe.js';
 import {AddModalButton} from './AddModalButton.js';
 import {Table} from './Table.js';
 import {User} from './User.js';
-import SavedRecipes from './SavedRecipes.js'
+import {SavedRecipes} from './SavedRecipes.js'
 import { connect } from 'react-redux';
 
 class IngredientApp extends Component {

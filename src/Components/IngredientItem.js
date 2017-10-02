@@ -17,7 +17,10 @@ class IngredientItem extends Component {
   render() {
      return (
       <tr>
-        <td className={this.props.ingredient.selected ? 'tableRows highlight' : 'tableRows'} 
+        <td className={this.props.ingredient.selected ? 
+            'tableRows highlight' 
+            : 
+            'tableRows'} 
             onClick={this.handleClassChange}>
           {this.props.ingredient.name}
         </td>

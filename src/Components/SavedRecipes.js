@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import { ingredientActions } from '../_actions';
+import { connect } from 'react-redux';
 
 class SavedRecipes extends Component {
   constructor (props) {
@@ -51,4 +52,9 @@ class SavedRecipes extends Component {
   }
 }
 
-export default SavedRecipes
+function mapStateToProps(state) {
+  return {};
+}
+
+const connectedRegisterPage = connect(mapStateToProps)(SavedRecipes);
+export { connectedRegisterPage as SavedRecipes };
