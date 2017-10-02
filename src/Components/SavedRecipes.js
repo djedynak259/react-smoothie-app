@@ -2,14 +2,19 @@ import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import { ingredientActions } from '../_actions';
 import { connect } from 'react-redux';
+import {firebase} from '../_helpers';
 
 class SavedRecipes extends Component {
+  mixins: [ReactFireMixin]
   constructor (props) {
     super(props);
     this.state = {
         visible : false,
-        name: ''
+        name: '',
+        items:''
     }
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleRecipeName = this.handleRecipeName.bind(this)
   }
 
   openModal() {
@@ -23,6 +28,36 @@ class SavedRecipes extends Component {
           visible : false,
           name:''
       });
+  } 
+
+  handleRecipeName (event) {
+    this.setState({name: event.target.value});
+  }
+
+// Testing firebase
+
+  componentDidMount () {
+    var ref = firebase.database().ref().child('react').child('test1');
+    ref.on('value', snap =>{
+      this.setState({
+        items:snap.val()
+      })
+    })
+    console.log(ref)
+  }
+
+
+  handleSubmit(){
+    let savedRecipe = this.props.ingredients.filter(e=>{
+      return e.selected
+    }).map(f=>{return f.id})
+
+    this.props.dispatch(ingredientActions.addIngredient(this.state.name, this.state.category))
+    
+    this.setState({
+        visible : false,
+        name:''
+    });
   }  
 
   render() {
@@ -42,7 +77,8 @@ class SavedRecipes extends Component {
               className='searchInput addModal'
               type="text"
               placeholder="Name"
-              value={this.state.name}/>  
+              value={this.state.name}
+              onChange={this.handleRecipeName}/>  
             <input className='addModalAdd button'type="button" value="Submit" onClick={this.handleSubmit}/>
             <input className='addModalClose button' type="button" value="Close" onClick={() => this.closeModal()} />
           </div>   
@@ -53,7 +89,8 @@ class SavedRecipes extends Component {
 }
 
 function mapStateToProps(state) {
-  return {};
+  const {ingredients} = state
+  return {ingredients};
 }
 
 const connectedRegisterPage = connect(mapStateToProps)(SavedRecipes);
