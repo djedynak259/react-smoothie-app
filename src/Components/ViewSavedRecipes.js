@@ -89,7 +89,11 @@ class ViewSavedRecipes extends Component {
    this.firebaseRef.on('value', function(snapshot){
     snapshot.forEach(function(child){
         var value = child.val();
-        recipeList.push({name: value.name})
+        let ingredientList = '';
+        value.ingredients.forEach(e=>{
+          ingredientList+=`${e.name} `
+        })
+        recipeList.push(<div><p>{value.name}</p><p>{ingredientList}</p></div>)
     });
 
     console.log(recipeList)

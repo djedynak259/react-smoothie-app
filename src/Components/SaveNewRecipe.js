@@ -58,7 +58,7 @@ class SaveNewRecipe extends Component {
 
     let savedRecipe = this.props.ingredients.filter(e=>{
       return e.selected
-    }).map(f=>{return f.id})
+    }).map(f=>{return {name:f.name,id:f.id}})
     console.log(savedRecipe)
 
     if(this.state.name.length === 0 ||savedRecipe.length === 0){
