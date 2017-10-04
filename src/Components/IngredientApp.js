@@ -17,10 +17,16 @@ class IngredientApp extends Component {
         <div className="app-header">
           <h2>Smoothie Creator</h2>
           <User/>
-          <SaveNewRecipe/>
-          <ViewSavedRecipes/>
-          <SearchBar/>           
-          <AddModalButton/>
+          <div className='actionBar'>
+            <div className='left'>
+              <SaveNewRecipe/>
+              <ViewSavedRecipes/>
+            </div>
+            <div className='right'>
+              <SearchBar/>           
+              <AddModalButton/>
+            </div>  
+          </div>
         </div>
         <NewSelection/>    
         <Recipe/>  

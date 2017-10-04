@@ -3,9 +3,17 @@ body {
   box-sizing: border-box;
 }
  
+.actionBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actionBar .left {
+  display: flex;
+}
+
 .addSection {
   display: inline-block;
-  float: right;
 }
 
 .addModalAdd {
@@ -134,7 +142,6 @@ body {
 }
 
 .searchForm {
-  float: right;
   text-align: left;
   display: inline-block;
   border: 1px white solid;
