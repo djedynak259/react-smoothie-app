@@ -9,29 +9,37 @@ import {SaveNewRecipe} from './SaveNewRecipe.js'
 import {ViewSavedRecipes} from './ViewSavedRecipes.js'
 import { connect } from 'react-redux';
 
+
+
+//             <User/>
+
 class IngredientApp extends Component {
 
   render() {
     return (
-      <div className='content'>
-        <div className="app-header">
-          <h2>Smoothie Creator</h2>
-          <User/>
-          <div className='actionBar'>
-            <div className='left'>
-              <SaveNewRecipe/>
-              <ViewSavedRecipes/>
+      <div>
+        <div className='app-header'>
+          <div className="content">
+            <h2>Smoothie Creator</h2>
+
+            <div className='actionBar'>
+              <div className='left'>
+                <SaveNewRecipe/>
+                <ViewSavedRecipes/>
+              </div>
+              <div className='right'>
+                <SearchBar/>           
+                <AddModalButton/>
+              </div>  
             </div>
-            <div className='right'>
-              <SearchBar/>           
-              <AddModalButton/>
-            </div>  
+            <NewSelection/>    
+            <Recipe/> 
           </div>
+        </div>   
+        <div className="content">
+          <Table/>
         </div>
-        <NewSelection/>    
-        <Recipe/>  
-        <Table/>
-      </div> 
+      </div>  
     );
   }
   
