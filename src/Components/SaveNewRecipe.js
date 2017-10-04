@@ -79,8 +79,8 @@ class SaveNewRecipe extends Component {
         <input className='button' type="button" value="Save Recipe" onClick={() => this.openModal()}/>    
         <Modal 
           visible={this.state.visible}
-          width="360"
-          height="196"
+          width="328"
+          height="141"
           effect="fadeInUp"
           onClickAway={() => this.closeModal()}>
           <div className='modalWrapper'>

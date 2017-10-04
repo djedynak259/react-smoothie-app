@@ -5,7 +5,7 @@ import { recipeActions } from '../_actions';
 import { connect } from 'react-redux';
 
 class IngredientItem extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.handleClassChange = this.handleClassChange.bind(this);
   }

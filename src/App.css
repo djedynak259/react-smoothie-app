@@ -1,3 +1,11 @@
+/*Colors*/
+
+.modalWrapper {background-color: #25A6DE;}
+.app-header {background-color: #25A6DE;}
+.tableRows.highlight {background-color: #9ee7ff;}
+
+/*CSS*/
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -18,15 +26,15 @@ body {
 
 .addModalAdd {
   position: absolute;
-  bottom: 10px;
-  right: 64px;
+  bottom: -9px;
+  right: 78px;
   border: 1px solid grey !important;
 }
 
 .addModalClose {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: -9px;
+  right: 22px;
   border: 1px solid grey !important;
 }
 
@@ -44,7 +52,6 @@ body {
 
 .app-header {
   padding-top: 40px;
-  background-color: #25A6DE;
 }
 
 .app-header h2 {
@@ -107,13 +114,14 @@ body {
   padding: 0 10px;
 }
 
-.highlight {
+.tableRows.highlight {
   background-color: #9ee7ff;
 }
 
 .modalWrapper {
   padding: 16px;
-  padding-bottom: 30px;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .modalWrapper h1 {
@@ -154,6 +162,7 @@ body {
 .table {
   display: flex;
   flex-flow: row wrap;
+  /*background-color: #25A6DE;*/
 /*  border: 1px white solid;
   border-radius: 2px;*/
 }

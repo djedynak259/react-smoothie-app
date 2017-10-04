@@ -55,7 +55,7 @@ class AddModalButton extends Component {
               <Modal 
                 visible={this.state.visible}
                 width="360"
-                height="196"
+                height="176"
                 effect="fadeInUp"
                 onClickAway={() => this.closeModal()}>
                 <div className='modalWrapper'>
