@@ -19,6 +19,13 @@
 			type: 'DELETE_INGREDIENT',
 			id: id
 		}
+	},
+
+	selectRecipe(idArr){
+		return {
+			type: 'SELECT_RECIPE',
+			idArr: idArr
+		}
 	}
 
 }

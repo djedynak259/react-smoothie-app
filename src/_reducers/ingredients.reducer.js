@@ -50,6 +50,13 @@ export function ingredients(state = init, action) {
 					Object.assign({}, e, {selected: !e.selected}) : e
 			})
 
+		case 'SELECT_RECIPE' :
+			return state.map(e=>{
+				return action.idArr.includes(e.id) ? 
+					Object.assign({}, e, {selected: true}) : 
+					Object.assign({}, e, {selected: false})
+			})		
+
 		case 'DELETE_INGREDIENT' :
 			return
 

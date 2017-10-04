@@ -1,49 +1,47 @@
 import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import { connect } from 'react-redux';
+import {ViewRecipe} from './ViewRecipe.js';
+import { recipeActions } from '../_actions';
+
 
 class ViewSavedRecipes extends Component {
   constructor (props) {
     super(props);
     this.state = {
-        visible : false,
-        name: ''
+        name: '',
+        visible: this.props.visible
     }
-    this.handleSubmit = this.handleSubmit.bind(this)
     this.handleRecipeName = this.handleRecipeName.bind(this)
   }
 
   openModal() {
-      this.setState({
-          visible : true
-      });
+    this.props.dispatch(recipeActions.openModal()) 
   }
 
   closeModal() {
-      this.setState({
-          visible : false,
-          name:''
-      });
+    this.setState({
+        name:''
+    });
+    this.props.dispatch(recipeActions.closeModal())       
   } 
 
   handleRecipeName (event) {
     this.setState({name: event.target.value});
-  }
-
-  handleSubmit(){
-      // complete this code
   }   
+
+  componentWillReceiveProps(nextProps){
+      this.setState({
+        visible:nextProps.visible
+    });
+  }
 
   render() {
     
     let recipeList = []
 
-    this.props.savedRecipes.forEach(f => {
-        let ingredientList = '';
-        f.ingredients.forEach(e=>{
-          ingredientList+=`${e.name} `
-        })
-        recipeList.push(<div><p>{f.name}</p><p>{ingredientList}</p></div>)
+    this.props.savedRecipes.forEach(recipe => {
+        recipeList.push(<ViewRecipe key={recipe.id} recipe={recipe}/>)
     });
 
      return (
@@ -58,7 +56,6 @@ class ViewSavedRecipes extends Component {
           <div className='modalWrapper'>
             <h1>ViewRecipes</h1>
             <ul>{recipeList}</ul>
-      
             <input className='addModalAdd button'type="button" value="Submit" onClick={this.handleSubmit}/>
             <input className='addModalClose button' type="button" value="Close" onClick={() => this.closeModal()} />
           </div>   
@@ -69,8 +66,8 @@ class ViewSavedRecipes extends Component {
 }
 
 function mapStateToProps(state) {
-  const {savedRecipes} = state.recipes
-  return {savedRecipes};
+  const {savedRecipes,visible} = state.recipes
+  return {savedRecipes, visible};
 }
 
 const connectedRegisterPage = connect(mapStateToProps)(ViewSavedRecipes);
