@@ -41,7 +41,7 @@ class ViewSavedRecipes extends Component {
     let recipeList = []
 
     this.props.savedRecipes.forEach(recipe => {
-        recipeList.push(<ViewRecipe key={recipe.id} recipe={recipe}/>)
+        recipeList.push(<ViewRecipe key={recipe.name} recipe={recipe}/>)
     });
 
      return (
