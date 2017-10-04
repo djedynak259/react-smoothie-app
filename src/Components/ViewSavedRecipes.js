@@ -46,7 +46,7 @@ class ViewSavedRecipes extends Component {
 
      return (
       <div>
-        <input className='button' type="button" value="View Savex Recipes" onClick={() => this.openModal()}/>    
+        <input className='button' type="button" value="View Saved Recipes" onClick={() => this.openModal()}/>    
         <Modal 
           visible={this.state.visible}
           width="400"
@@ -54,8 +54,8 @@ class ViewSavedRecipes extends Component {
           effect="fadeInUp"
           onClickAway={() => this.closeModal()}>
           <div className='modalWrapper'>
-            <h1>ViewRecipes</h1>
-            <ul>{recipeList}</ul>
+            <h1>View Recipes</h1>
+            <ul className='viewRecipeContainer'>{recipeList}</ul>
             <input className='addModalAdd button'type="button" value="Submit" onClick={this.handleSubmit}/>
             <input className='addModalClose button' type="button" value="Close" onClick={() => this.closeModal()} />
           </div>   

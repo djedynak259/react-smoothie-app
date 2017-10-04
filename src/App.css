@@ -3,6 +3,7 @@
 .modalWrapper {background-color: #25A6DE;}
 .app-header {background-color: #25A6DE;}
 .tableRows.highlight {background-color: #9ee7ff;}
+.viewRecipeRecipe {background-color: #fff8f5;}
 
 /*CSS*/
 
@@ -55,16 +56,16 @@ ul {
 }
 
 .app-header {
-  padding-top: 40px;
+
 }
 
 .app-header h2 {
   display: inline-block;
   color: white;
-  margin: 0;
+  margin: 20px 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: normal; 
-  font-size: 40px;
+  font-size: 46px;
 }
 
 .actionText {
@@ -103,9 +104,10 @@ ul {
   border: 1px white solid;
   background-color: white;
   border-radius: 5px;
-  padding: 6px;
+  padding: 6px 10px;
   font-size: 14px;
   cursor: pointer;
+  margin: 0 5px 0 0;
 }
 
 .button:hover {
@@ -115,7 +117,7 @@ ul {
 .content {
   margin: 0 auto;
   max-width: 1280px;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 .tableRows.highlight {
@@ -134,18 +136,18 @@ ul {
 }
 
 .recipe {
-  margin: 0 0 10px 0;
+  padding: 20px 0;
 }
 
 .recipe p {
   font-family: 'Bellefair', serif;
   margin: 0;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .searchInput {
-  padding: 6px;
+  padding: 6px 10px;
   font-size: 14px;
   border: none;
 }
@@ -159,13 +161,14 @@ ul {
   display: inline-block;
   border: 1px white solid;
   border-radius: 2px;
-  margin-left: 20px;
+  margin: 0 5px 0 20px;
   background-color: white;
 }
 
 .table {
   display: flex;
   flex-flow: row wrap;
+  padding-top: 20px;
   /*background-color: #25A6DE;*/
 /*  border: 1px white solid;
   border-radius: 2px;*/
@@ -208,6 +211,13 @@ ul {
   background-color: #EAE3E2;
 }
 
+.viewRecipeContainer{
+  height: 278px;
+  position: relative;
+  overflow-y: scroll;
+
+}
+
 .viewRecipeName{
 }
 
@@ -216,6 +226,9 @@ ul {
 }
 
 .viewRecipeRecipe {
-  padding: 3px;
+  padding: 12px;
   display: flex;
+  border-radius: 14px;
+  margin: 3px;
+  cursor: pointer;
 }

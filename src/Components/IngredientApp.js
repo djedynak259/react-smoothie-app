@@ -11,7 +11,8 @@ import { connect } from 'react-redux';
 
 
 
-//             <User/>
+// <User/>
+// <NewSelection/>    
 
 class IngredientApp extends Component {
 
@@ -32,7 +33,7 @@ class IngredientApp extends Component {
                 <AddModalButton/>
               </div>  
             </div>
-            <NewSelection/>    
+            
             <Recipe/> 
           </div>
         </div>   
