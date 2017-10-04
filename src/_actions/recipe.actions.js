@@ -17,7 +17,14 @@
 		return {
 			type: 'MODAL_OPEN'
 		}
-	}			
+	},
+
+	suggestions(e) {
+		return {
+			type: 'SUGGEST_INGREDIENTS',
+			suggestions: e
+		}
+	}					
 
 }
 
