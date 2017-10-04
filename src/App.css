@@ -10,6 +10,10 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+ul {
+  padding: 0;
+}
  
 .actionBar {
   display: flex;
@@ -202,4 +206,16 @@ body {
 
 .tableRows:hover {
   background-color: #EAE3E2;
+}
+
+.viewRecipeName{
+}
+
+.viewRecipeIngredients{
+  flex: 
+}
+
+.viewRecipeRecipe {
+  padding: 3px;
+  display: flex;
 }

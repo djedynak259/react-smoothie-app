@@ -25,9 +25,10 @@ class ViewRecipe extends Component {
     })
 
     return (
-      <div>
-        <div onClick={this.viewRecipe}> {this.props.recipe.name} - {ingredientList}</div>
-      </div>
+        <div className='viewRecipeRecipe' onClick={this.viewRecipe}> 
+          <div className='viewRecipeName'>{this.props.recipe.name}</div> 
+          <div className='viewRecipeIngredients'> - {ingredientList}</div>
+        </div>
     );
   }
 }
