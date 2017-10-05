@@ -2,6 +2,8 @@
 
 .modalWrapper {background-color: #25A6DE;}
 .app-header {background-color: #25A6DE;}
+.tableColumn {background-color: #fff8f5;}
+.tableRows {background-color: #ffffff;}
 .tableRows.highlight {background-color: #9ee7ff;}
 .tableRows.highlight:hover {background-color: #8ae2fb;}
 .viewRecipeRecipe {background-color: #fff8f5;}
@@ -195,7 +197,6 @@ ul {
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
-  background: #FFF8F5;
   border: 2px #25A6DE solid;
   border-radius: 10px;
   margin: 4px;
@@ -212,7 +213,6 @@ ul {
   display: block;
   text-align: left;
   border: 1px solid #969393;
-  background-color: #ffffff;
   border-radius: 10px;
   padding: 16px 16px;
   margin: 4px 4px 4px 4px;
@@ -231,7 +231,6 @@ ul {
   height: 278px;
   position: relative;
   overflow-y: scroll;
-
 }
 
 .viewRecipeName{
