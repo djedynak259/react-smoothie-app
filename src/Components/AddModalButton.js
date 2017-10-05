@@ -54,8 +54,8 @@ class AddModalButton extends Component {
               <input className='button' type="button" value="Add Ingredients" onClick={() => this.openModal()} />
               <Modal 
                 visible={this.state.visible}
-                width="360"
-                height="176"
+                width="376"
+                height="178"
                 effect="fadeInUp"
                 onClickAway={() => this.closeModal()}>
                 <div className='modalWrapper'>

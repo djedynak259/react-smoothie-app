@@ -3,6 +3,7 @@
 .modalWrapper {background-color: #25A6DE;}
 .app-header {background-color: #25A6DE;}
 .tableRows.highlight {background-color: #9ee7ff;}
+.tableRows.highlight:hover {background-color: #8ae2fb;}
 .viewRecipeRecipe {background-color: #fff8f5;}
 
 /*CSS*/
@@ -31,14 +32,14 @@ ul {
 
 .addModalAdd {
   position: absolute;
-  bottom: -9px;
-  right: 78px;
+  bottom: -11px;
+  right: 84px;
   border: 1px solid grey !important;
 }
 
 .addModalClose {
   position: absolute;
-  bottom: -9px;
+  bottom: -11px;
   right: 22px;
   border: 1px solid grey !important;
 }
@@ -111,7 +112,8 @@ ul {
 }
 
 .button:hover {
-  background-color: #EAE3E2;
+  /*background-color: #EAE3E2;*/
+  box-shadow: 1px 1px 9px 1px rgba(0,0,0,0.3)
 }
 
 .content {
@@ -128,6 +130,14 @@ ul {
   padding: 16px;
   height: 100%;
   border-radius: 3px;
+}
+
+.modalWrapper .button {
+  margin: 0 0 0 5px;
+}
+
+.modalWrapper .button:hover {
+  box-shadow: none;
 }
 
 .modalWrapper h1 {
@@ -200,15 +210,15 @@ ul {
   border-radius: 10px;
   padding: 16px 16px;
   margin: 4px 4px 4px 4px;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 1px 3px 0 rgba(0,0,0,0.19);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 .2rem;
+}
+
+.tableRows:hover {
+  box-shadow: 1px 1px 9px 1px rgba(0,0,0,0.3)
 }
 
 .tableRows.highlight:hover {
   background-color: #8ae2fb;
-}
-
-.tableRows:hover {
-  background-color: #EAE3E2;
 }
 
 .viewRecipeContainer{
