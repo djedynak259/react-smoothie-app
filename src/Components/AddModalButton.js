@@ -51,7 +51,7 @@ class AddModalButton extends Component {
   render() {
       return (
           <section className='addSection'>
-              <input className='button' type="button" value="Add Ingredients" onClick={() => this.openModal()} />
+              <input className='button' type="submit" value="Add Ingredients" onClick={() => this.openModal()} />
               <Modal 
                 visible={this.state.visible}
                 width="376"
@@ -73,7 +73,7 @@ class AddModalButton extends Component {
                     placeholder="Category"
                     value={this.state.category}
                     onChange={this.handleChangeCategory}/>  
-                  <input className='addModalAdd button'type="button" value="Submit" onClick={this.handleSubmit}/>
+                  <input className='addModalAdd button'type="submit" value="Submit" onClick={this.handleSubmit}/>
                   <input className='addModalClose button' type="button" value="Close" onClick={() => this.closeModal()} />
                 </div>   
               </Modal>

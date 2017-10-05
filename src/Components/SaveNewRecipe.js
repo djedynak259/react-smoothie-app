@@ -76,7 +76,7 @@ class SaveNewRecipe extends Component {
   render() {
      return (
       <div>
-        <input className='button' type="button" value="Save Recipe" onClick={() => this.openModal()}/>    
+        <input className='button' type="submit" value="Save Recipe" onClick={() => this.openModal()}/>    
         <Modal 
           visible={this.state.visible}
           width="354"
@@ -92,7 +92,7 @@ class SaveNewRecipe extends Component {
               placeholder="Name"
               value={this.state.name}
               onChange={this.handleRecipeName}/>  
-            <input className='addModalAdd button'type="button" value="Submit" onClick={this.handleSubmit}/>
+            <input className='addModalAdd button'type="submit" value="Submit" onClick={this.handleSubmit}/>
             <input className='addModalClose button' type="button" value="Close" onClick={() => this.closeModal()} />
           </div>   
         </Modal>
