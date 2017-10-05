@@ -33,11 +33,10 @@ class IngredientApp extends Component {
                 <AddModalButton/>
               </div>  
             </div>
-            
-            <Recipe/> 
           </div>
         </div>   
         <div className="content">
+          <Recipe/>  
           <Table/>
         </div>
       </div>  
