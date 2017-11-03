@@ -11,8 +11,8 @@ class IngredientItem extends Component {
   }
 
   handleClassChange(e) {
+    this.props.dispatch(ingredientActions.chooseIngredient(this.props.ingredient.id))    
     this.props.dispatch(filterActions.recentSelection(this.props.ingredient.name))
-    this.props.dispatch(ingredientActions.chooseIngredient(this.props.ingredient.id))
   }
 
   render() {

@@ -2,7 +2,7 @@
 
 .modalWrapper {background-color: #25A6DE;}
 .app-header {background-color: #25A6DE;}
-.tableColumn {background-color: #fbe1d6;}
+.tableColumn {background-color: rgb(119, 234, 209);}
 /*#fff8f5*/
 .tableRows {background-color: #ffffff;}
 .tableRows.highlight {background-color: #9ee7ff;}
@@ -219,6 +219,7 @@ ul {
   padding: 16px 16px;
   margin: 4px 4px 4px 4px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 .2rem;
+  cursor: pointer;
 }
 
 .tableRows:hover {
