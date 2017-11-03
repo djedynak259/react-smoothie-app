@@ -39,7 +39,7 @@ class SaveNewRecipe extends Component {
     }).map(f=>{return {name:f.name,id:f.id}})
     console.log(savedRecipe)
 
-    if(this.state.name.length === 0 ||savedRecipe.length === 0){
+    if(this.state.name.length === 0 || savedRecipe.length === 0){
 
       // add validation popup
       return

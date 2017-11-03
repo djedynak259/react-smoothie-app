@@ -68,7 +68,6 @@ class ViewSavedRecipes extends Component {
           <div className='modalWrapper'>
             <h1>View Recipes</h1>
             <ul className='viewRecipeContainer'>{recipeList}</ul>
-            <input className='addModalAdd button'type="button" value="Submit" onClick={this.handleSubmit}/>
             <input className='addModalClose button' type="button" value="Close" onClick={() => this.closeModal()} />
           </div>   
         </Modal>
