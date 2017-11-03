@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import { ingredientActions } from '../_actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class AddModalButton extends Component {
   constructor(props) {
@@ -80,6 +81,10 @@ class AddModalButton extends Component {
           </section>
       );
   }
+}
+
+AddModalButton.propTypes = {
+  ingredients: PropTypes.array.isRequired
 }
 
 function mapStateToProps(state) {

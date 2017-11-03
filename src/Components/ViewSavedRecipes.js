@@ -3,6 +3,8 @@ import Modal from 'react-awesome-modal';
 import { connect } from 'react-redux';
 import {ViewRecipe} from './ViewRecipe.js';
 import { recipeActions } from '../_actions';
+import {firebase} from '../_helpers';
+
 
 
 class ViewSavedRecipes extends Component {
@@ -29,6 +31,16 @@ class ViewSavedRecipes extends Component {
   handleRecipeName (event) {
     this.setState({name: event.target.value});
   }   
+
+  componentWillMount () {
+    let items = []
+
+    this.firebaseRef = firebase.database().ref().child('react').child('SavedRecipes');
+    this.firebaseRef.on("child_added", snap => {
+      items.push(snap.val());
+      this.props.dispatch(recipeActions.saveRecipe(items))
+    });
+  }
 
   componentWillReceiveProps(nextProps){
       this.setState({

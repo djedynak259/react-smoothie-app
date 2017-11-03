@@ -32,18 +32,6 @@ class SaveNewRecipe extends Component {
     this.setState({name: event.target.value});
   }
 
-// firebase
-
-  componentWillMount () {
-    let items = []
-
-    this.firebaseRef = firebase.database().ref().child('react').child('SavedRecipes');
-    this.firebaseRef.on("child_added", snap => {
-      items.push(snap.val());
-      this.props.dispatch(recipeActions.saveRecipe(items))
-    });
-  }
-
   handleSubmit(){
 
     let savedRecipe = this.props.ingredients.filter(e=>{
@@ -56,6 +44,8 @@ class SaveNewRecipe extends Component {
       // add validation popup
       return
     }
+
+    this.firebaseRef = firebase.database().ref().child('react').child('SavedRecipes');
 
     this.firebaseRef.push({
       name: this.state.name,

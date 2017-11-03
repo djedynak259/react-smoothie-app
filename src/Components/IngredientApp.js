@@ -8,6 +8,7 @@ import {User} from './User.js';
 import {SaveNewRecipe} from './SaveNewRecipe.js'
 import {ViewSavedRecipes} from './ViewSavedRecipes.js'
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 
 
@@ -43,6 +44,10 @@ class IngredientApp extends Component {
     );
   }
   
+}
+
+IngredientApp.propTypes = {
+  ingredients: PropTypes.array.isRequired
 }
 
 function mapStateToProps(state) {
