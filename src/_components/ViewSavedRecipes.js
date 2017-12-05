@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import { connect } from 'react-redux';
 import { ViewRecipe } from './ViewRecipe.js';
+import ButtonViewSavedRecipes from '../_containers/ButtonViewSavedRecipes.js';
+
 import { 
   saveRecipe,
   modal_viewRecipes_closeModal,
@@ -41,7 +43,7 @@ class ViewSavedRecipes extends Component {
 
      return (
       <div>
-        <input className='button' type="button" value="View Saved Recipes" onClick={() => this.openModal()}/>    
+        <ButtonViewSavedRecipes />    
         <Modal 
           visible={this.props.modalVisible}
           width="400"

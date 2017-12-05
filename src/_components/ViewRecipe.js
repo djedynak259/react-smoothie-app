@@ -18,7 +18,8 @@ class ViewRecipe extends Component {
   }
 
   render() {
-    let ingredientList = '';    this.props.recipe.ingredients.forEach(e=>{
+    let ingredientList = '';    
+    this.props.recipe.ingredients.forEach(e=>{
       ingredientList+=`${e.name} `
     })
 
