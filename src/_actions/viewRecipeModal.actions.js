@@ -1,16 +1,11 @@
- const viewRecipeModalActions = {
-
-	closeModal(e) {
-		return {
-			type: 'MODAL_CLOSE'
-		}
-	},
-
-	openModal(e) {
-		return {
-			type: 'MODAL_OPEN'
-		}
-	},				
+export const modal_viewRecipes_closeModal = () => {
+	return {
+		type: 'MODAL_CLOSE'
+	}
 }
 
-export { viewRecipeModalActions }
+export const modal_viewRecipes_openModal = () => {
+	return {
+		type: 'MODAL_OPEN'
+	}
+}

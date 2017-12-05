@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ingredientActions } from '../_actions';
-import { viewRecipeModalActions } from '../_actions';
+import { 
+  selectRecipe, 
+  modal_viewRecipes_closeModal 
+} from '../_actions';
+
 
 class ViewRecipe extends Component {
 
@@ -10,13 +13,12 @@ class ViewRecipe extends Component {
     this.props.recipe.ingredients.forEach(e=>{
       idArr.push(e.id)
     })
-    this.props.dispatch(ingredientActions.selectRecipe(idArr)) 
-    this.props.dispatch(viewRecipeModalActions.closeModal()) 
+    this.props.dispatch(selectRecipe(idArr)) 
+    this.props.dispatch(modal_viewRecipes_closeModal()) 
   }
 
   render() {
-    let ingredientList = '';
-    this.props.recipe.ingredients.forEach(e=>{
+    let ingredientList = '';    this.props.recipe.ingredients.forEach(e=>{
       ingredientList+=`${e.name} `
     })
 

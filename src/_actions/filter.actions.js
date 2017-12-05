@@ -1,7 +1,7 @@
-export const filterText = (e) => {
+export const filterText = (text) => {
 	return {
 		type: 'FILTER_INGREDIENTS',
-		filterText: e
+		filterText: text
 	}
 }	
 

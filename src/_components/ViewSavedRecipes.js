@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import { connect } from 'react-redux';
 import { ViewRecipe } from './ViewRecipe.js';
-import { saveRecipe } from '../_actions';
-import { viewRecipeModalActions } from '../_actions';
+import { 
+  saveRecipe,
+  modal_viewRecipes_closeModal,
+  modal_viewRecipes_openModal
+ } from '../_actions';
 import { firebase } from '../_helpers';
 
 
@@ -11,11 +14,11 @@ import { firebase } from '../_helpers';
 class ViewSavedRecipes extends Component {
 
   openModal() {
-    this.props.dispatch(viewRecipeModalActions.openModal()) 
+    this.props.dispatch(modal_viewRecipes_openModal()) 
   }
 
   closeModal() {
-    this.props.dispatch(viewRecipeModalActions.closeModal())       
+    this.props.dispatch(modal_viewRecipes_closeModal())       
   }   
 
   componentWillMount () {
