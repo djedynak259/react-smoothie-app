@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import { connect } from 'react-redux';
-import {ViewRecipe} from './ViewRecipe.js';
+import { ViewRecipe } from './ViewRecipe.js';
 import { recipeActions } from '../_actions';
 import { viewRecipeModalActions } from '../_actions';
-import {firebase} from '../_helpers';
+import { firebase } from '../_helpers';
 
 
 

@@ -7,18 +7,6 @@
 		}
 	},
 
-	closeModal(e) {
-		return {
-			type: 'MODAL_CLOSE'
-		}
-	},
-
-	openModal(e) {
-		return {
-			type: 'MODAL_OPEN'
-		}
-	},
-
 	suggestions(e) {
 		return {
 			type: 'SUGGEST_INGREDIENTS',
