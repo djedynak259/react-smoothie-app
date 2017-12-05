@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {ingredientActions} from '../_actions';
 import { filterActions } from '../_actions';
-import { recipeActions } from '../_actions';
+// import { recipeActions } from '../_actions';
 import { connect } from 'react-redux';
 
 class IngredientItem extends Component {

@@ -3,33 +3,19 @@ import Modal from 'react-awesome-modal';
 import { connect } from 'react-redux';
 import {ViewRecipe} from './ViewRecipe.js';
 import { recipeActions } from '../_actions';
+import { viewRecipeModalActions } from '../_actions';
 import {firebase} from '../_helpers';
 
 
 
 class ViewSavedRecipes extends Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-        name: '',
-        visible: this.props.visible
-    }
-    this.handleRecipeName = this.handleRecipeName.bind(this)
-  }
 
   openModal() {
-    this.props.dispatch(recipeActions.openModal()) 
+    this.props.dispatch(viewRecipeModalActions.openModal()) 
   }
 
   closeModal() {
-    this.setState({
-        name:''
-    });
-    this.props.dispatch(recipeActions.closeModal())       
-  } 
-
-  handleRecipeName (event) {
-    this.setState({name: event.target.value});
+    this.props.dispatch(viewRecipeModalActions.closeModal())       
   }   
 
   componentWillMount () {
@@ -39,12 +25,6 @@ class ViewSavedRecipes extends Component {
     this.firebaseRef.on("child_added", snap => {
       items.push(snap.val());
       this.props.dispatch(recipeActions.saveRecipe(items))
-    });
-  }
-
-  componentWillReceiveProps(nextProps){
-      this.setState({
-        visible:nextProps.visible
     });
   }
 
@@ -60,7 +40,7 @@ class ViewSavedRecipes extends Component {
       <div>
         <input className='button' type="button" value="View Saved Recipes" onClick={() => this.openModal()}/>    
         <Modal 
-          visible={this.state.visible}
+          visible={this.props.modalVisible}
           width="400"
           height="400"
           effect="fadeInUp"
@@ -77,8 +57,9 @@ class ViewSavedRecipes extends Component {
 }
 
 function mapStateToProps(state) {
-  const {savedRecipes,visible} = state.recipes
-  return {savedRecipes, visible};
+  const {savedRecipes} = state.recipes
+  const {modalVisible} = state.viewRecipeModal
+  return {savedRecipes, modalVisible};
 }
 
 const connectedRegisterPage = connect(mapStateToProps)(ViewSavedRecipes);

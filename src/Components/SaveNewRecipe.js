@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import { connect } from 'react-redux';
 import {firebase} from '../_helpers';
-import { recipeActions } from '../_actions';
+// import { recipeActions } from '../_actions';
 
 class SaveNewRecipe extends Component {
   constructor (props) {

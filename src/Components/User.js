@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {userActions} from '../_actions';
+// import {userActions} from '../_actions';
 import { connect } from 'react-redux';
 
 class User extends Component {
@@ -10,7 +10,7 @@ class User extends Component {
   }
 
   handleNewUser() {
-    this.props.dispatch(userActions.createNewUser())
+    // this.props.dispatch(userActions.createNewUser())
   }
 
   render() {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import {NewSelection} from './NewSelection.js';
+// import {NewSelection} from './NewSelection.js';
 import {SearchBar} from './SearchBar.js';
 import {Recipe} from './Recipe.js';
 import {AddModalButton} from './AddModalButton.js';
 import {Table} from './Table.js';
-import {User} from './User.js';
+// import {User} from './User.js';
 import {SaveNewRecipe} from './SaveNewRecipe.js'
 import {ViewSavedRecipes} from './ViewSavedRecipes.js'
 import { connect } from 'react-redux';
