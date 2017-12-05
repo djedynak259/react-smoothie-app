@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Modal from 'react-awesome-modal';
 import { connect } from 'react-redux';
-import { ViewRecipe } from './ViewRecipe.js';
-import ButtonViewSavedRecipes from '../_containers/ButtonViewSavedRecipes.js';
+import Modal from 'react-awesome-modal';
+import { ViewRecipe } from './ViewRecipe';
+import ButtonViewSavedRecipes from '../_containers/ButtonViewSavedRecipes';
 
 import { 
   saveRecipe,
@@ -24,8 +24,8 @@ class ViewSavedRecipes extends Component {
     this.firebaseRef = firebase.database().ref().child('react').child('SavedRecipes');
     this.firebaseRef.on("child_added", snap => {
       items.push(snap.val());
-      this.props.dispatch(saveRecipe(items))
     });
+    this.props.dispatch(saveRecipe(items))
   }
 
   render() {

@@ -1,7 +1,7 @@
-export const saveRecipe = (text) => {
+export const saveRecipe = (arr) => {
 	return {
 		type: 'SAVED_RECIPES',
-		savedRecipes: text
+		loadSavedRecipes: arr
 	}
 }
 

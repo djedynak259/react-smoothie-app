@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
-import Modal from 'react-awesome-modal';
 import { connect } from 'react-redux';
-import {firebase} from '../_helpers';
-import { modal_saveRecipe_closeModal, modal_saveRecipe_openModal} from '../_actions';
+import { firebase } from '../_helpers';
+import { modal_saveRecipe_closeModal} from '../_actions';
+import Modal from 'react-awesome-modal';
+import ButtonSaveRecipe from '../_containers/ButtonSaveRecipe'
 
 class SaveNewRecipe extends Component {
   constructor (props) {
     super(props);
     this.state = {
-        visible : false,
         name: ''
     }
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleRecipeName = this.handleRecipeName.bind(this)
-  }
-
-  openModal() {
-    this.props.dispatch(modal_saveRecipe_openModal())
   }
 
   closeModal() {
     this.props.dispatch(modal_saveRecipe_closeModal())
+    this.setState({
+      name:''
+    });
   } 
 
   handleRecipeName (event) {
@@ -48,9 +45,10 @@ class SaveNewRecipe extends Component {
     });
     
     this.setState({
-        visible : false,
         name:''
     });
+
+    this.props.dispatch(modal_saveRecipe_closeModal())
 
   }  
 
@@ -61,9 +59,9 @@ class SaveNewRecipe extends Component {
   render() {
      return (
       <div>
-        <input className='button' type="submit" value="Save Recipe" onClick={() => this.openModal()}/>    
+        <ButtonSaveRecipe /> 
         <Modal 
-          visible={this.state.visible}
+          visible={this.props.modalVisible}
           width="354"
           height="139"
           effect="fadeInUp"
@@ -76,8 +74,8 @@ class SaveNewRecipe extends Component {
               type="text"
               placeholder="Name"
               value={this.state.name}
-              onChange={this.handleRecipeName}/>  
-            <input className='addModalAdd button'type="submit" value="Submit" onClick={this.handleSubmit}/>
+              onChange={(e) => this.handleRecipeName(e)}/>  
+            <input className='addModalAdd button'type="submit" value="Submit" onClick={() => this.handleSubmit()}/>
             <input className='addModalClose button' type="button" value="Close" onClick={() => this.closeModal()} />
           </div>   
         </Modal>
@@ -88,7 +86,8 @@ class SaveNewRecipe extends Component {
 
 function mapStateToProps(state) {
   const {recipes, ingredients} = state
-  return {recipes, ingredients};
+  const {modalVisible} = state.saveRecipeModal
+  return {recipes, ingredients, modalVisible};
 }
 
 const connectedRegisterPage = connect(mapStateToProps)(SaveNewRecipe);

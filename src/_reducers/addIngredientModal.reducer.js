@@ -1,12 +1,12 @@
 let init = {modalVisible:false}
 
-export function viewRecipeModal(state = init, action) {
+export function addIngredientModal(state = init, action) {
   switch (action.type) {
 
-    case 'VIEW_RECIPE_MODAL_CLOSE':
+    case 'ADD_INGREDIENT_MODAL_CLOSE':
       return {modalVisible : false}
 
-    case 'VIEW_RECIPE_MODAL_OPEN':
+    case 'ADD_INGREDIENT_MODAL_OPEN':
       return {modalVisible : true}  
 
     default:

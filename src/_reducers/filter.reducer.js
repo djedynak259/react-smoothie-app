@@ -6,7 +6,7 @@ let init = {
 export function filter(state = init, action) {
 
   switch (action.type) {
-    
+
     case 'FILTER_INGREDIENTS' :
       return Object.assign({}, state, {filterText: action.filterText})
 
