@@ -36,9 +36,11 @@ class IngredientApp extends Component {
             </div>
           </div>
         </div>   
-        <div className="content">
-          <Recipe/>  
-          <Table/>
+        <div className="mainContent">
+          <div className='content'>
+            <Recipe/>  
+            <Table/>
+          </div>
         </div>
       </div>  
     );
