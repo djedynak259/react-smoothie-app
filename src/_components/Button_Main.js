@@ -4,14 +4,12 @@ import PropTypes from 'prop-types';
 class Button_Main extends Component {
 
   render() {
-     return (
-      <div>
-        <input 
-          className='button' 
-          type="button" 
-          value={this.props.value} 
-          onClick={() => this.props.handleClick()}/>    
-      </div>
+    return (
+      <input 
+        className='button' 
+        type="button" 
+        value={this.props.value} 
+        onClick={() => this.props.handleClick()}/>
     );
   }
 }

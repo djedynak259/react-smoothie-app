@@ -9,7 +9,7 @@ class SaveNewRecipe extends Component {
   constructor (props) {
     super(props);
     this.state = {
-        name: ''
+      name: ''
     }
   }
 
@@ -48,7 +48,7 @@ class SaveNewRecipe extends Component {
   }  
 
   render() {
-     return (
+    return (
       <div>
         <ButtonSaveRecipe /> 
         <Modal 

@@ -9,9 +9,8 @@ import {
 class ViewRecipe extends Component {
 
   viewRecipe(e) {
-    let idArr = [];
-    this.props.recipe.ingredients.forEach(e=>{
-      idArr.push(e.id)
+    let idArr = this.props.recipe.ingredients.map(e=>{
+      return e.id
     })
     this.props.dispatch(selectRecipe(idArr)) 
     this.props.dispatch(modal_viewRecipes_closeModal()) 
@@ -24,10 +23,10 @@ class ViewRecipe extends Component {
     })
 
     return (
-      <div className='viewRecipeRecipe' onClick={() => this.viewRecipe()}> 
+      <li className='viewRecipeRecipe' onClick={() => this.viewRecipe()}> 
         <div className='viewRecipeName'>{this.props.recipe.name}</div> 
         <div className='viewRecipeIngredients'> - {ingredientList}</div>
-      </div>
+      </li>
     );
   }
 }

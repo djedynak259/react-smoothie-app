@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Modal from 'react-awesome-modal';
-import { ViewRecipe } from './ViewRecipe';
-import ButtonViewSavedRecipes from '../_containers/ButtonViewSavedRecipes';
-
 import { 
   saveRecipe,
   modal_viewRecipes_closeModal
- } from '../_actions';
+} from '../_actions';
 import { firebase } from '../_helpers';
-
+import Modal from 'react-awesome-modal';
+import { ViewRecipe } from './ViewRecipe';
+import ButtonViewSavedRecipes from '../_containers/ButtonViewSavedRecipes';
 
 
 class ViewSavedRecipes extends Component {
@@ -29,14 +27,11 @@ class ViewSavedRecipes extends Component {
   }
 
   render() {
-    
-    let recipeList = []
-
-    this.props.savedRecipes.forEach(recipe => {
-        recipeList.push(<ViewRecipe key={recipe.name} recipe={recipe}/>)
+    let recipeList = this.props.savedRecipes.map(recipe => {
+      return(<ViewRecipe key={recipe.name} recipe={recipe}/>)
     });
 
-     return (
+    return (
       <div>
         <ButtonViewSavedRecipes />    
         <Modal 

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { 
   addIngredient,
   modal_addIngredient_closeModal
- } from '../_actions';
+} from '../_actions';
 import ButtonAddIngredient from '../_containers/ButtonAddIngredient'
 import Modal from 'react-awesome-modal';
 
@@ -13,8 +13,8 @@ class AddModalButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        name: '',
-        category: ''
+      name: '',
+      category: ''
     }
   }
 
@@ -82,10 +82,10 @@ AddModalButton.propTypes = {
 }
 
 function mapStateToProps(state) {
-    const { modalVisible } = state.addIngredientModal
-    return {
-      modalVisible
-    };
+  const { modalVisible } = state.addIngredientModal
+  return {
+    modalVisible
+  };
 }
  
 const connectedRegisterPage = connect(mapStateToProps)(AddModalButton);
