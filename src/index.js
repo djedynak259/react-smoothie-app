@@ -8,7 +8,6 @@ import './index.css';
 import './App.css';
 
 
-
 ReactDOM.render(
 	<Provider store={store}>
 		<IngredientApp />
