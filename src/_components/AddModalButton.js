@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { 
   addIngredient,
   modal_addIngredient_closeModal
@@ -75,10 +74,6 @@ class AddModalButton extends Component {
       </section>
     );
   }
-}
-
-AddModalButton.propTypes = {
-  ingredients: PropTypes.array.isRequired
 }
 
 function mapStateToProps(state) {

@@ -11,6 +11,12 @@ import ButtonViewSavedRecipes from '../_containers/ButtonViewSavedRecipes';
 
 
 class ViewSavedRecipes extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      recipes:[]
+    }
+  }
 
   closeModal() {
     this.props.dispatch(modal_viewRecipes_closeModal())       
@@ -18,12 +24,19 @@ class ViewSavedRecipes extends Component {
 
   componentWillMount () {
     let items = []
-
-    this.firebaseRef = firebase.database().ref().child('react').child('SavedRecipes');
-    this.firebaseRef.on("child_added", snap => {
-      items.push(snap.val());
-    });
-    this.props.dispatch(saveRecipe(items))
+    const retrieve = new Promise(resolve => {
+      this.firebaseRef = firebase.database().ref().child('react').child('SavedRecipes');
+      this.firebaseRef.on("child_added", snap => {
+        items.push(snap.val());
+      });
+      resolve('done')
+    })
+    
+    const update = () => {
+      this.props.dispatch(saveRecipe(items))
+      this.setState({recipes:items})  
+    }
+    retrieve.then(update)
   }
 
   render() {
