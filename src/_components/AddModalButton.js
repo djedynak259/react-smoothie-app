@@ -1,36 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { 
+  addIngredient,
+  modal_addIngredient_closeModal
+ } from '../_actions';
+import ButtonAddIngredient from '../_containers/ButtonAddIngredient'
 import Modal from 'react-awesome-modal';
-import { addIngredient } from '../_actions';
 
 
 class AddModalButton extends Component {
   constructor(props) {
-      super(props);
-      this.state = {
-          visible : false,
-          name: '',
-          category: ''
-      }
-
-      this.handleChangeName = this.handleChangeName.bind(this); 
-      this.handleChangeCategory = this.handleChangeCategory.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);        
-  }
-
-  openModal() {
-      this.setState({
-          visible : true
-      });
+    super(props);
+    this.state = {
+        name: '',
+        category: ''
+    }
   }
 
   closeModal() {
-      this.setState({
-          visible : false,
-          name:'',
-          category:''
-      });
+    this.props.dispatch(modal_addIngredient_closeModal())
+    this.setState({
+      name:'',
+      category:''
+    });
   }
 
   handleChangeName (event) {
@@ -44,43 +37,43 @@ class AddModalButton extends Component {
   handleSubmit(){
     this.props.dispatch(addIngredient(this.state.name, this.state.category))
     this.setState({
-        visible : false,
-        name:'',
-        category:''
+      name:'',
+      category:''
     });
+    this.props.dispatch(modal_addIngredient_closeModal())
   }    
 
   render() {
-      return (
-          <section className='addSection'>
-              <input className='button' type="submit" value="Add Ingredients" onClick={() => this.openModal()} />
-              <Modal 
-                visible={this.state.visible}
-                width="376"
-                height="178"
-                effect="fadeInUp"
-                onClickAway={() => this.closeModal()}>
-                <div className='modalWrapper'>
-                  <h1>Add Ingredient</h1>
-                  <p>Enter ingredient name and category.</p>
-                  <input
-                    className='searchInput addModal'
-                    type="text"
-                    placeholder="Name"
-                    value={this.state.name}
-                    onChange={this.handleChangeName}/> 
-                  <input
-                    className='searchInput addModal'
-                    type="text"
-                    placeholder="Category"
-                    value={this.state.category}
-                    onChange={this.handleChangeCategory}/>  
-                  <input className='addModalAdd button'type="submit" value="Submit" onClick={this.handleSubmit}/>
-                  <input className='addModalClose button' type="button" value="Close" onClick={() => this.closeModal()} />
-                </div>   
-              </Modal>
-          </section>
-      );
+    return (
+      <section className='addSection'>
+        <ButtonAddIngredient />
+        <Modal 
+          visible={this.props.modalVisible}
+          width="376"
+          height="178"
+          effect="fadeInUp"
+          onClickAway={() => this.closeModal()}>
+          <div className='modalWrapper'>
+            <h1>Add Ingredient</h1>
+            <p>Enter ingredient name and category.</p>
+            <input
+              className='searchInput addModal'
+              type="text"
+              placeholder="Name"
+              value={this.state.name}
+              onChange={(e)=>this.handleChangeName(e)}/> 
+            <input
+              className='searchInput addModal'
+              type="text"
+              placeholder="Category"
+              value={this.state.category}
+              onChange={(e)=>this.handleChangeCategory(e)}/>  
+            <input className='addModalAdd button'type="submit" value="Submit" onClick={()=>this.handleSubmit()}/>
+            <input className='addModalClose button' type="button" value="Close" onClick={() => this.closeModal()} />
+          </div>   
+        </Modal>
+      </section>
+    );
   }
 }
 
@@ -89,56 +82,11 @@ AddModalButton.propTypes = {
 }
 
 function mapStateToProps(state) {
-    const { ingredients } = state;
+    const { modalVisible } = state.addIngredientModal
     return {
-        ingredients
+      modalVisible
     };
 }
  
 const connectedRegisterPage = connect(mapStateToProps)(AddModalButton);
 export { connectedRegisterPage as AddModalButton };
-
-// class Examples extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             visible : false
-//         }
-//     }
-
-//     openModal() {
-//         this.setState({
-//             visible : true
-//         });
-//     }
-
-//     closeModal() {
-//         this.setState({
-//             visible : false
-//         });
-//     }
-
-//     render() {
-//         return (
-//             <section>
-//                 <h1>React-Modal Examples</h1>
-//                 <input type="button" value="Open" onClick={() => this.openModal()} />
-//                 <Modal 
-//                     visible={this.state.visible}
-//                     width="400"
-//                     height="300"
-//                     effect="fadeInUp"
-//                     onClickAway={() => this.closeModal()}
-//                 >
-//                     <div>
-//                         <h1>Title</h1>
-//                         <p>Some Contents</p>
-//                         <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
-//                     </div>
-//                 </Modal>
-//             </section>
-//         );
-//     }
-// }
-
-// export default AddModalButton

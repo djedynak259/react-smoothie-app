@@ -15,9 +15,7 @@ class SaveNewRecipe extends Component {
 
   closeModal() {
     this.props.dispatch(modal_saveRecipe_closeModal())
-    this.setState({
-      name:''
-    });
+    this.setState({name:''});
   } 
 
   handleRecipeName (event) {
@@ -29,11 +27,8 @@ class SaveNewRecipe extends Component {
     let savedRecipe = this.props.ingredients.filter(e=>{
       return e.selected
     }).map(f=>{return {name:f.name,id:f.id}})
-    console.log(savedRecipe)
 
     if(this.state.name.length === 0 || savedRecipe.length === 0){
-
-      // add validation popup
       return
     }
 
@@ -44,12 +39,8 @@ class SaveNewRecipe extends Component {
       ingredients: savedRecipe
     });
     
-    this.setState({
-        name:''
-    });
-
+    this.setState({name:''});
     this.props.dispatch(modal_saveRecipe_closeModal())
-
   }  
 
   componentWillUnmount () {
