@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-
 import { ingredients } from './ingredients.reducer';
 import { filter } from './filter.reducer';
 import { recipes } from './recipe.reducer';

@@ -23,7 +23,6 @@ class IngredientApp extends Component {
         <div className='app-header'>
           <div className="content">
             <h2>Smoothie Creator</h2>
-
             <div className='actionBar'>
               <div className='left'>
                 <SaveNewRecipe/>
