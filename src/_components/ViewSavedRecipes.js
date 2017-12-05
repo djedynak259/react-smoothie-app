@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import { connect } from 'react-redux';
 import { ViewRecipe } from './ViewRecipe.js';
-import { recipeActions } from '../_actions';
+import { saveRecipe } from '../_actions';
 import { viewRecipeModalActions } from '../_actions';
 import { firebase } from '../_helpers';
 
@@ -24,7 +24,7 @@ class ViewSavedRecipes extends Component {
     this.firebaseRef = firebase.database().ref().child('react').child('SavedRecipes');
     this.firebaseRef.on("child_added", snap => {
       items.push(snap.val());
-      this.props.dispatch(recipeActions.saveRecipe(items))
+      this.props.dispatch(saveRecipe(items))
     });
   }
 

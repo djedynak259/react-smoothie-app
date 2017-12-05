@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { ingredientActions } from '../_actions';
-import { recipeActions } from '../_actions';
 import { connect } from 'react-redux';
+import { ingredientActions } from '../_actions';
+import { viewRecipeModalActions } from '../_actions';
 
 class ViewRecipe extends Component {
-  constructor (props) {
-    super(props);
-    this.viewRecipe = this.viewRecipe.bind(this);
-  }
 
   viewRecipe(e) {
     let idArr = [];
@@ -15,7 +11,7 @@ class ViewRecipe extends Component {
       idArr.push(e.id)
     })
     this.props.dispatch(ingredientActions.selectRecipe(idArr)) 
-    this.props.dispatch(recipeActions.closeModal()) 
+    this.props.dispatch(viewRecipeModalActions.closeModal()) 
   }
 
   render() {
@@ -25,10 +21,10 @@ class ViewRecipe extends Component {
     })
 
     return (
-        <div className='viewRecipeRecipe' onClick={this.viewRecipe}> 
-          <div className='viewRecipeName'>{this.props.recipe.name}</div> 
-          <div className='viewRecipeIngredients'> - {ingredientList}</div>
-        </div>
+      <div className='viewRecipeRecipe' onClick={() => this.viewRecipe()}> 
+        <div className='viewRecipeName'>{this.props.recipe.name}</div> 
+        <div className='viewRecipeIngredients'> - {ingredientList}</div>
+      </div>
     );
   }
 }

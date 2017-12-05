@@ -11,7 +11,6 @@
 			type: 'MODAL_OPEN'
 		}
 	},				
-
 }
 
 export { viewRecipeModalActions }

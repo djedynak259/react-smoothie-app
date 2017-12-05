@@ -1,19 +1,13 @@
- const recipeActions = {
-
-	saveRecipe(e) {
-		return {
-			type: 'SAVED_RECIPES',
-			savedRecipes: e
-		}
-	},
-
-	suggestions(e) {
-		return {
-			type: 'SUGGEST_INGREDIENTS',
-			suggestions: e
-		}
-	}					
-
+export const saveRecipe = (e) => {
+	return {
+		type: 'SAVED_RECIPES',
+		savedRecipes: e
+	}
 }
 
-export { recipeActions }
+export const suggestions = (e) => {
+	return {
+		type: 'SUGGEST_INGREDIENTS',
+		suggestions: e
+	}
+}

@@ -1,19 +1,13 @@
- const filterActions = {
+export const filterText = (e) => {
+	return {
+		type: 'FILTER_INGREDIENTS',
+		filterText: e
+	}
+}	
 
-	filterText(e) {
-		return {
-			type: 'FILTER_INGREDIENTS',
-			filterText: e
-		}
-	},
-
-	recentSelection(name) {
-		return {
-			type: 'RECENT_SELECTION',
-			name: name
-		}
-	}	
-
+export const recentSelection = (name) => {
+	return {
+		type: 'RECENT_SELECTION',
+		name: name
+	}
 }
-
-export { filterActions }

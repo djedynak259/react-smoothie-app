@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {ingredientActions} from '../_actions';
-import { filterActions } from '../_actions';
+import { recentSelection } from '../_actions';
 // import { recipeActions } from '../_actions';
 import { connect } from 'react-redux';
 
@@ -12,7 +12,7 @@ class IngredientItem extends Component {
 
   handleClassChange(e) {
     this.props.dispatch(ingredientActions.chooseIngredient(this.props.ingredient.id))    
-    this.props.dispatch(filterActions.recentSelection(this.props.ingredient.name))
+    this.props.dispatch(recentSelection(this.props.ingredient.name))
   }
 
   render() {
