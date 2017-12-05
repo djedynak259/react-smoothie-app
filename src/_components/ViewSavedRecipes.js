@@ -6,18 +6,13 @@ import ButtonViewSavedRecipes from '../_containers/ButtonViewSavedRecipes.js';
 
 import { 
   saveRecipe,
-  modal_viewRecipes_closeModal,
-  modal_viewRecipes_openModal
+  modal_viewRecipes_closeModal
  } from '../_actions';
 import { firebase } from '../_helpers';
 
 
 
 class ViewSavedRecipes extends Component {
-
-  openModal() {
-    this.props.dispatch(modal_viewRecipes_openModal()) 
-  }
 
   closeModal() {
     this.props.dispatch(modal_viewRecipes_closeModal())       

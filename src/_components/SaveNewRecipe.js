@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
 import { connect } from 'react-redux';
 import {firebase} from '../_helpers';
-// import { recipeActions } from '../_actions';
+import { modal_saveRecipe_closeModal, modal_saveRecipe_openModal} from '../_actions';
 
 class SaveNewRecipe extends Component {
   constructor (props) {
@@ -16,16 +16,11 @@ class SaveNewRecipe extends Component {
   }
 
   openModal() {
-      this.setState({
-          visible : true
-      });
+    this.props.dispatch(modal_saveRecipe_openModal())
   }
 
   closeModal() {
-      this.setState({
-          visible : false,
-          name:''
-      });
+    this.props.dispatch(modal_saveRecipe_closeModal())
   } 
 
   handleRecipeName (event) {
