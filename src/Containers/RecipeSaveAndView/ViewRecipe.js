@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { 
   selectRecipe, 
   modal_viewRecipes_closeModal 
-} from '../_actions';
+} from './actions';
 
 
 class ViewRecipe extends Component {

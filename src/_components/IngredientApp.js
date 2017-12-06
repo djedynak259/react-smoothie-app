@@ -5,8 +5,8 @@ import {Recipe} from './Recipe.js';
 import {AddModalButton} from './AddModalButton.js';
 import {Table} from './Table.js';
 // import {User} from './User.js';
-import {SaveNewRecipe} from './SaveNewRecipe.js'
-import {ViewSavedRecipes} from './ViewSavedRecipes.js'
+import {SaveNewRecipe} from 'Containers/RecipeSaveAndView/SaveNewRecipe.js'
+import {ViewSavedRecipes} from 'Containers/RecipeSaveAndView/ViewSavedRecipes.js'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 

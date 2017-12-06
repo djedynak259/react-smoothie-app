@@ -19,10 +19,3 @@ export const deleteIngredient = (id) => {
 		id: id
 	}
 }
-
-export const selectRecipe = (idArr) => {
-	return {
-		type: 'SELECT_RECIPE',
-		idArr: idArr
-	}
-}

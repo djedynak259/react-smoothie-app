@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { modal_saveRecipe_openModal } from  '../_actions'
-import Button_Main from '../_components/Button_Main'
+import { modal_saveRecipe_openModal } from  './actions'
+import Button_Main from '_components/Button_Main'
 
 const mapStateToProps = (state) => {
   return {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { firebase } from '../_helpers';
-import { modal_saveRecipe_closeModal} from '../_actions';
+import { firebase } from '_helpers';
+import { modal_saveRecipe_closeModal} from './actions';
 import Modal from 'react-awesome-modal';
-import ButtonSaveRecipe from '../_containers/ButtonSaveRecipe'
+import ButtonSaveRecipe from 'Containers/RecipeSaveAndView/ButtonSaveRecipe'
 
 class SaveNewRecipe extends Component {
   constructor (props) {

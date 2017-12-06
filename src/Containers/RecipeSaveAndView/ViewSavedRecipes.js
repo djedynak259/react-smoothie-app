@@ -3,20 +3,14 @@ import { connect } from 'react-redux';
 import { 
   saveRecipe,
   modal_viewRecipes_closeModal
-} from '../_actions';
-import { firebase } from '../_helpers';
+} from './actions';
+import { firebase } from '_helpers';
 import Modal from 'react-awesome-modal';
 import { ViewRecipe } from './ViewRecipe';
-import ButtonViewSavedRecipes from '../_containers/ButtonViewSavedRecipes';
+import ButtonViewSavedRecipes from 'Containers/RecipeSaveAndView/ButtonViewSavedRecipes';
 
 
 class ViewSavedRecipes extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      recipes:[]
-    }
-  }
 
   closeModal() {
     this.props.dispatch(modal_viewRecipes_closeModal())       
@@ -34,7 +28,6 @@ class ViewSavedRecipes extends Component {
     
     const update = () => {
       this.props.dispatch(saveRecipe(items))
-      this.setState({recipes:items})  
     }
     retrieve.then(update)
   }
