@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 // import {NewSelection} from './NewSelection.js';
 import {SearchBar} from './SearchBar.js';
 import {Recipe} from './Recipe.js';
-import {AddModalButton} from './AddModalButton.js';
+import {AddModalButton} from 'Containers/AddIngredient/AddModalButton';
 import {Table} from './Table.js';
 // import {User} from './User.js';
-import {SaveNewRecipe} from 'Containers/RecipeSaveAndView/SaveNewRecipe.js'
-import {ViewSavedRecipes} from 'Containers/RecipeSaveAndView/ViewSavedRecipes.js'
+import {SaveNewRecipe} from 'Containers/RecipeSaveAndView/SaveNewRecipe'
+import {ViewSavedRecipes} from 'Containers/RecipeSaveAndView/ViewSavedRecipes'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 

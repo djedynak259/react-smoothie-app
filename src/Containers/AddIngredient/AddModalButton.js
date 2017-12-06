@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { 
   addIngredient,
   modal_addIngredient_closeModal
-} from '../_actions';
-import ButtonAddIngredient from '../_containers/ButtonAddIngredient'
+} from './actions';
+import ButtonAddIngredient from 'Containers/AddIngredient/ButtonAddIngredient'
 import Modal from 'react-awesome-modal';
 
 

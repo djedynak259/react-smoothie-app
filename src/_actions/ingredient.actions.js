@@ -1,11 +1,3 @@
-export const addIngredient = (name,category) => {
-	return {
-		type: 'ADD_INGREDIENT',
-		name: name,
-		category: category
-	}
-}
-
 export const selectIngredient = (id) => {
 	return {
 		type: 'CHOOSE_INGREDIENT',
