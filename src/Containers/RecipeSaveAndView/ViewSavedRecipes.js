@@ -58,7 +58,7 @@ class ViewSavedRecipes extends Component {
 }
 
 function mapStateToProps(state) {
-  const {savedRecipes} = state.recipes
+  const {savedRecipes} = state.savedRecipes
   const {modalVisible} = state.viewRecipeModal
   return {savedRecipes, modalVisible};
 }
