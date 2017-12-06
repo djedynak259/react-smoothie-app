@@ -3,11 +3,4 @@ export const filterText = (text) => {
 		type: 'FILTER_INGREDIENTS',
 		filterText: text
 	}
-}	
-
-export const recentSelection = (name) => {
-	return {
-		type: 'RECENT_SELECTION',
-		name: name
-	}
 }

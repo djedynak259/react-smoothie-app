@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import {NewSelection} from './NewSelection.js';
-import {SearchBar} from './SearchBar.js';
+import {SearchBar} from 'Containers/FilterIngredients/SearchBar';
 import {Recipe} from './Recipe.js';
 import {AddModalButton} from 'Containers/AddIngredient/AddModalButton';
 import {Table} from './Table.js';

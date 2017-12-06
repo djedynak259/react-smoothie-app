@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { filterText } from '../_actions';
+import { filterText } from './actions';
 
 class SearchBar extends Component {
   

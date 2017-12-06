@@ -11,3 +11,10 @@ export const deleteIngredient = (id) => {
 		id: id
 	}
 }
+
+export const recentSelection = (name) => {
+	return {
+		type: 'RECENT_SELECTION',
+		name: name
+	}
+}
