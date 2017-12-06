@@ -6,7 +6,7 @@ class Button_Main extends Component {
   render() {
     return (
       <input 
-        className='button' 
+        className={this.props.class}
         type="button" 
         value={this.props.value} 
         onClick={() => this.props.handleClick()}/>
@@ -16,7 +16,8 @@ class Button_Main extends Component {
 
 Button_Main.propTypes = {
   value: PropTypes.string.isRequired,
-  handleClick: PropTypes.func.isRequired
+  handleClick: PropTypes.func.isRequired,
+  class: PropTypes.string.isRequired
 }
 
 export default Button_Main;

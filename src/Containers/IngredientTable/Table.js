@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { TableColumn } from './TableColumn.js';
 import { connect } from 'react-redux';
+import { TableColumn } from './TableColumn.js';
 
 class Table extends Component {
 
@@ -11,7 +11,7 @@ class Table extends Component {
       if (ingredient.category !== lastCategory) {
         columns.push(<TableColumn 
                        category={ingredient.category} 
-                        key={ingredient.category + 1}
+                        key={ingredient.category + i}
                         />);
       }
       lastCategory = ingredient.category;
@@ -35,5 +35,3 @@ function mapStateToProps(state) {
  
 const connectedRegisterPage = connect(mapStateToProps)(Table);
 export { connectedRegisterPage as Table };
-
-// export {Table}

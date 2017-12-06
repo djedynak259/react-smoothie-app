@@ -23,10 +23,5 @@ class IngredientItem extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  const {ingredients} = state
-  return {ingredients};
-}
-
-const connectedRegisterPage = connect(mapStateToProps)(IngredientItem);
+const connectedRegisterPage = connect()(IngredientItem);
 export { connectedRegisterPage as IngredientItem };

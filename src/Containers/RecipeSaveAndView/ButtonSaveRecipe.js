@@ -4,7 +4,8 @@ import Button_Main from '_components/Button_Main'
 
 const mapStateToProps = (state) => {
   return {
-  	value: 'Save Recipe'
+  	value: 'Save Recipe',
+  	class: 'button'
   }
 }
 
