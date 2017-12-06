@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // import {NewSelection} from './NewSelection.js';
 import {SearchBar} from 'Containers/FilterIngredients/SearchBar';
-import {Recipe} from './Recipe.js';
+import {Recipe} from 'Containers/RecipeIngredientDisplay/Recipe.js';
 import {AddModalButton} from 'Containers/AddIngredient/AddModalButton';
-import {Table} from './Table.js';
+import {Table} from 'Containers/IngredientTable/Table.js';
 // import {User} from './User.js';
 import {SaveNewRecipe} from 'Containers/RecipeSaveAndView/SaveNewRecipe'
 import {ViewSavedRecipes} from 'Containers/RecipeSaveAndView/ViewSavedRecipes'

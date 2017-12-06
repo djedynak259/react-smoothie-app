@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { selectIngredient, recentSelection } from '../_actions';
+import { selectIngredient, recentSelection } from './actions';
 
 
 class IngredientItem extends Component {
