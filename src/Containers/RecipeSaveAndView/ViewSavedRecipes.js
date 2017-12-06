@@ -33,7 +33,7 @@ class ViewSavedRecipes extends Component {
   }
 
   render() {
-    let recipeList = this.props.savedRecipes.map(recipe => {
+    let recipeList = this.props.savedRecipes.map((recipe,i) => {
       return(<ViewRecipe key={recipe.name} recipe={recipe}/>)
     });
 

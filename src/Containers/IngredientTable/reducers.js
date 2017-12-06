@@ -63,3 +63,15 @@ export function ingredients(state = init, action) {
 		default: return state;
 	}
 }
+
+export function recentSelection(state = {recentSelection: 'Select Ingredient'}, action) {
+
+  switch (action.type) {
+
+    case 'RECENT_SELECTION' :
+      return {recentSelection: action.name}
+
+    default:
+      return state
+  }
+}

@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
-import { ingredients } from 'Containers/IngredientTable/ingredients.reducer';
-import { filter } from 'Containers/FilterIngredients/filter.reducer';
-import { recentSelection } from 'Containers/IngredientTable/recentSelection.reducer';
+import { ingredients, recentSelection } from 'Containers/IngredientTable/reducers';
+import { filter } from 'Containers/FilterIngredients/reducers';
 import { savedRecipes, viewRecipeModal, saveRecipeModal } from 'Containers/RecipeSaveAndView/reducers';
-import { addIngredientModal } from 'Containers/AddIngredient/addIngredientModal.reducer'
+import { addIngredientModal } from 'Containers/AddIngredient/reducers'
 
 const rootReducer = combineReducers({
   ingredients,
