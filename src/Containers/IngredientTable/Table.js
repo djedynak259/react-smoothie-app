@@ -7,11 +7,11 @@ class Table extends Component {
   render() {
     var columns = [];
     var lastCategory = null;
-    this.props.ingredients.forEach((ingredient) => {
+    this.props.ingredients.forEach((ingredient,i) => {
       if (ingredient.category !== lastCategory) {
         columns.push(<TableColumn 
                        category={ingredient.category} 
-                        key={ingredient.category}
+                        key={ingredient.category + 1}
                         />);
       }
       lastCategory = ingredient.category;

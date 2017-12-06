@@ -8,14 +8,14 @@ class TableColumn extends Component {
   render() {
     var rows = [];
     var column = this.props.category;
-    this.props.ingredients.forEach((ingredient) => {
+    this.props.ingredients.forEach((ingredient,i) => {
        if (ingredient.name.toLowerCase().indexOf(this.props.filterText.toLowerCase()) === -1) {
         return;
       }
        if (ingredient.category === column) {
         rows.push(<IngredientItem 
                     ingredient={ingredient} 
-                    key={ingredient.name} />);
+                    key={ingredient.name+i} />);
       }
     });
     return (
