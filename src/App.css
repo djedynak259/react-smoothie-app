@@ -182,10 +182,6 @@ ul {
 .table {
   display: flex;
   flex-flow: row wrap;
-  /*padding-top: 20px;*/
-  /*background-color: #25A6DE;*/
-/*  border: 1px white solid;
-  border-radius: 2px;*/
 }
 
 .tableColumn {
@@ -193,7 +189,6 @@ ul {
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
-  /*border: 2px #25A6DE solid;*/
   border-radius: 10px;
   margin: 4px;
 }
@@ -210,7 +205,6 @@ ul {
 .tableRows {
   display: block;
   text-align: left;
-  /*border: 1px solid #969393;*/
   border-radius: 10px;
   padding: 16px 16px;
   margin: 4px 4px 4px 4px;
@@ -233,10 +227,6 @@ ul {
 }
 
 .viewRecipeName{
-}
-
-.viewRecipeIngredients{
-  flex: 
 }
 
 .viewRecipeRecipe {
